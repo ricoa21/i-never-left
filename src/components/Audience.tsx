@@ -1,9 +1,9 @@
 const Audience = () => {
   const freelancerTypes = [
     {
-      title: "Photographers",
-      icon: "📸",
-      description: "Rebuild your client portfolio and showcase new perspectives gained during your time away."
+      title: "Creative Freelancers",
+      icon: "✨",
+      description: "Whatever your creative field, we help you re-ignite professional relationships and opportunities."
     },
     {
       title: "Design Professionals", 
@@ -26,9 +26,9 @@ const Audience = () => {
       description: "Get back to motivating clients with renewed energy and potentially new fitness insights."
     },
     {
-      title: "Creative Freelancers",
-      icon: "✨",
-      description: "Whatever your creative field, we help you re-ignite professional relationships and opportunities."
+      title: "Returning From Maternity",
+      icon: "👶",
+      description: "Navigate your professional return after maternity leave with confidence, rebuilding client relationships while balancing your new family priorities."
     }
   ];
 
