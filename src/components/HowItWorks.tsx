@@ -15,7 +15,7 @@ const HowItWorks = () => {
     {
       number: "3",
       title: "Choose Your Package & Communication Style", 
-      description: "Starter: One round of messages (SMS, email, or social DMs) + 2 social posts ready for you to post. Pro: Multi‑message, multi‑channel campaigns + scheduled social posts done for you. Concierge: Fully managed — posts, messages, and replies while you're away.",
+      description: "Pick the service level that suits your needs — from a single round of outreach with a couple of social updates, to multi‑channel campaigns, to full management of messages, posts, and replies while you're away.",
       icon: "💬"
     },
     {
