@@ -38,7 +38,7 @@ const Services = () => {
     },
     {
       title: "Concierge",
-      price: "from £399", 
+      price: "from £499", 
       description: "Full-service relaunch, communications management & strategic support",
       features: [
         "Everything in Pro, PLUS:",
