@@ -46,7 +46,7 @@ const ReturnJourney = () => {
     {
       id: "starter",
       name: "Starter",
-      price: "£149",
+      price: "£99",
       features: ["Up to 50 contacts", "Single channel", "Basic support"],
     },
     {
