@@ -15,13 +15,11 @@ const Hero = () => {
             
             <div className="space-y-6">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                I Never Left:
-                <span className="block mt-2 text-foreground/90">Relaunch Your Freelance Career</span>
+                Because I <span className="italic">never really</span> left
+                <span className="block mt-4 text-3xl sm:text-4xl lg:text-5xl font-light text-foreground/80">
+                  Welcome to the comeback revolution.
+                </span>
               </h1>
-              
-              <p className="text-xl sm:text-2xl font-light leading-relaxed text-muted-foreground max-w-2xl">
-                Return stronger. We reconnect you with clients and reboot your business after any break.
-              </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
