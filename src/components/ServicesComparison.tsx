@@ -6,58 +6,53 @@ import { Check, Sparkles } from "lucide-react";
 const packages = [
   {
     name: "Starter",
-    monthlyPrice: 99,
-    annualPrice: 950,
+    price: "£99",
+    popular: false,
     description: "Your simple comeback",
+    breakLength: "Best for 2-6 month breaks",
     features: [
-      "100 contacts",
-      "3 custom messages",
-      "2 Instagram posts",
-      "Email support",
-      "Campaign dashboard"
+      "Outreach to 100 contacts",
+      "3 message touchpoints",
+      "Social media posts",
+      "Booking guidance",
+      "One-off price - no ongoing fees",
     ],
-    popular: false
   },
   {
     name: "Pro",
-    monthlyPrice: 249,
-    annualPrice: 2390,
-    description: "Hands-off re-engagement",
+    price: "£249",
+    popular: true,
+    description: "Hands-off relaunch",
+    breakLength: "Best for 3-9 month breaks",
     features: [
-      "250 contacts",
-      "4-message campaign",
-      "5 Instagram + LinkedIn posts",
-      "Priority support",
-      "Creative network access",
-      "Advanced analytics"
+      "Everything in Starter",
+      "Outreach to 150 contacts",
+      "Enhanced privacy settings",
+      "Google My Business setup",
+      "WhatsApp integration",
+      "Engagement tracking",
+      "Ongoing monthly support after return*",
     ],
-    popular: true
   },
   {
     name: "Concierge",
-    monthlyPrice: 499,
-    annualPrice: 4790,
-    description: "Full-service growth",
+    price: "From £499",
+    popular: false,
+    description: "Full campaign management",
+    breakLength: "Best for 6-12 month sabbaticals",
     features: [
-      "500+ contacts",
-      "Unlimited messages",
-      "Complete social management",
-      "Dedicated success manager",
-      "Custom strategy",
-      "White-glove service"
+      "Everything in Pro",
+      "Full social media management",
+      "Pre-return, launch & post-return support",
+      "Premium content creation",
+      "Paid ads management (optional)",
+      "Dedicated account manager",
+      "Monthly ongoing costs after return*",
     ],
-    popular: false
-  }
+  },
 ];
 
 const ServicesComparison = () => {
-  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
-
-  const getPrice = (pkg: typeof packages[0]) => {
-    const price = billingPeriod === "monthly" ? pkg.monthlyPrice : pkg.annualPrice;
-    return pkg.name === "Concierge" ? `£${price}+` : `£${price}`;
-  };
-
   return (
     <section className="py-32 px-4 bg-background">
       <div className="container mx-auto max-w-7xl">
@@ -74,44 +69,6 @@ const ServicesComparison = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-light">
             Choose the plan that brings you back
           </p>
-        </div>
-
-        {/* Billing Toggle */}
-        <div className="flex justify-center items-center gap-4 mb-16">
-          <button
-            onClick={() => setBillingPeriod("monthly")}
-            className={`text-base font-medium transition-colors ${
-              billingPeriod === "monthly" 
-                ? "text-foreground" 
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Monthly
-          </button>
-          <button
-            onClick={() => 
-              setBillingPeriod(billingPeriod === "monthly" ? "annual" : "monthly")
-            }
-            className="relative w-12 h-6 rounded-full bg-muted transition-colors hover:bg-muted/80"
-            aria-label="Toggle billing period"
-          >
-            <span 
-              className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-primary transition-transform ${
-                billingPeriod === "annual" ? "translate-x-6" : ""
-              }`}
-            />
-          </button>
-          <button
-            onClick={() => setBillingPeriod("annual")}
-            className={`text-base font-medium transition-colors ${
-              billingPeriod === "annual" 
-                ? "text-foreground" 
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Annual
-            <span className="ml-2 text-sm text-primary font-normal">(save 20%)</span>
-          </button>
         </div>
 
         {/* Pricing Cards */}
@@ -139,13 +96,13 @@ const ServicesComparison = () => {
                   <h3 className="text-sm font-medium text-muted-foreground mb-3 uppercase tracking-wide">
                     {pkg.name}
                   </h3>
-                  <div className="flex items-baseline gap-1 mb-3">
+                   <div className="flex items-baseline gap-1 mb-3">
                     <span className="text-5xl font-bold tracking-tight">
-                      {getPrice(pkg)}
+                      {pkg.price}
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    {billingPeriod === "monthly" ? "per month" : "per year"}
+                  <p className="text-sm text-muted-foreground mb-2">
+                    {pkg.breakLength}
                   </p>
                   <p className="text-base text-foreground/80 mt-4">
                     {pkg.description}
@@ -186,15 +143,14 @@ const ServicesComparison = () => {
         {/* Footer Info */}
         <div className="text-center space-y-6 max-w-2xl mx-auto pt-8">
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Need more capabilities for your business?
+            * All prices cover your time away. Pro and Concierge tiers include ongoing monthly fees once you've returned to work.
           </p>
-          <Button 
-            variant="outline" 
-            className="border-border text-foreground hover:bg-muted"
-            onClick={() => window.location.href = 'mailto:hello@ineverleft.co.uk'}
-          >
-            Contact us
-          </Button>
+          <p className="text-sm text-muted-foreground">
+            Not sure which package is right for you?{" "}
+            <a href="mailto:hello@ineverleft.co.uk" className="text-primary hover:underline">
+              Get in touch
+            </a>
+          </p>
         </div>
       </div>
     </section>

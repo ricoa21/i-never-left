@@ -12,7 +12,7 @@ const Footer = () => {
             </h2>
             <p className="text-xl text-background/80 mb-8 leading-relaxed">
               Don't let another month pass wondering "what if." Your clients are waiting for you to return. 
-              Let BeRightBack help you do it with confidence and style.
+              Let I Never Left help you do it with confidence and style.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="lg" className="text-lg px-8 py-4">
@@ -32,7 +32,7 @@ const Footer = () => {
                   <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <span className="text-background/90">hello@berightback.co.uk</span>
+                  <span className="text-background/90">hello@ineverleft.co.uk</span>
                 </div>
                 <div className="flex items-center">
                   <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@ const Footer = () => {
         
         <div className="border-t border-background/20 mt-16 pt-8 text-center">
           <p className="text-background/60">
-            © 2024 BeRightBack. Helping UK freelancers return with confidence. All rights reserved.
+            © 2024 I Never Left. Helping UK freelancers return with confidence. All rights reserved.
           </p>
         </div>
       </div>

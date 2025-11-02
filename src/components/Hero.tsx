@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-freelancer.jpg";
+import heroImage from "@/assets/hero-backpack.jpg";
 
 const Hero = () => {
   return (
@@ -15,11 +15,18 @@ const Hero = () => {
             
             <div className="space-y-6">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                Because I <span className="italic">never really</span> left
+                Because I never really left
                 <span className="block mt-4 text-3xl sm:text-4xl lg:text-5xl font-light text-foreground/80">
                   Welcome to the comeback revolution.
                 </span>
+                <span className="block mt-4 text-2xl sm:text-3xl lg:text-4xl font-light text-foreground/80">
+                  Built for freelancers to enjoy being free.
+                </span>
               </h1>
+              
+              <p className="text-lg sm:text-xl font-semibold leading-relaxed max-w-2xl">
+                Helping freelancers, creatives, and parents coming back from maternity leave relaunch with ease, reconnect with their world, and get back to doing what they love — all in one place.
+              </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
@@ -38,7 +45,7 @@ const Hero = () => {
             <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-border">
               <img 
                 src={heroImage}
-                alt="Professional freelancer working confidently"
+                alt="Travel backpack symbolizing return from break or sabbatical"
                 className="w-full h-full object-cover"
               />
             </div>

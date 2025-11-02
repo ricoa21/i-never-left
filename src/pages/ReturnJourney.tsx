@@ -47,19 +47,41 @@ const ReturnJourney = () => {
       id: "starter",
       name: "Starter",
       price: "£99",
-      features: ["Up to 50 clients and industry contacts", "Single channel", "Basic support"],
+      features: [
+        "Outreach to 100 contacts",
+        "3 message touchpoints",
+        "Social media posts",
+        "Booking guidance",
+        "One-off price - no ongoing fees",
+      ],
     },
     {
       id: "pro",
       name: "Pro", 
       price: "£249",
-      features: ["Up to 200 clients and industry contacts", "Multi-channel", "Priority support", "Social media posts"],
+      features: [
+        "Everything in Starter",
+        "Outreach to 150 contacts",
+        "Enhanced privacy settings",
+        "Google My Business setup",
+        "WhatsApp integration",
+        "Engagement tracking",
+        "Ongoing monthly support after return*",
+      ],
     },
     {
       id: "concierge",
       name: "Concierge",
-      price: "from £499",
-      features: ["Unlimited clients and industry contacts", "Full service", "Dedicated account manager", "Complete campaign management"],
+      price: "From £499",
+      features: [
+        "Everything in Pro",
+        "Full social media management",
+        "Pre-return, launch & post-return support",
+        "Premium content creation",
+        "Paid ads management (optional)",
+        "Dedicated account manager",
+        "Monthly ongoing costs after return*",
+      ],
     },
   ];
 
@@ -171,7 +193,7 @@ const ReturnJourney = () => {
           
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">
             <span className="block text-foreground">Start Your</span>
-            <span className="gradient-text block">Return Journey</span>
+            <span className="gradient-text block">Comeback Journey</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
             Let's create a campaign that announces your return and re-energizes your professional network. 
@@ -437,61 +459,9 @@ const ReturnJourney = () => {
             </CardContent>
           </Card>
 
-          {/* Social Media Images */}
           <Card>
             <CardHeader>
-              <CardTitle>6. Brand Images for Social Posts</CardTitle>
-              <CardDescription>
-                Upload images we can use for your social media announcements (JPG, PNG, up to 5MB each).
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <Label htmlFor="social-images">Upload Brand Images</Label>
-                <Input
-                  id="social-images"
-                  type="file"
-                  accept="image/*"
-                  multiple
-                  onChange={handleSocialImagesUpload}
-                  className="mt-2 cursor-pointer"
-                />
-              </div>
-              
-              {socialImages.length > 0 && (
-                <div>
-                  <Label className="text-sm font-medium">Selected Images:</Label>
-                  <div className="mt-2 space-y-2">
-                    {socialImages.map((file, index) => (
-                      <div key={index} className="flex items-center justify-between bg-muted p-2 rounded">
-                        <span className="text-sm">{file.name}</span>
-                        <Button
-                          type="button"
-                          variant="outline"
-                          size="sm"
-                          onClick={() => removeSocialImage(index)}
-                        >
-                          Remove
-                        </Button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-              
-              <div className="bg-muted p-3 rounded-lg">
-                <p className="text-sm text-muted-foreground">
-                  <strong>Image Guidelines:</strong> High-quality photos of you, your work, or your brand. 
-                  Minimum 1080x1080px for best results. We'll optimize them for each platform.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Booking Link */}
-          <Card>
-            <CardHeader>
-              <CardTitle>7. Booking Integration (Optional)</CardTitle>
+              <CardTitle>6. Booking Integration (Optional)</CardTitle>
               <CardDescription>
                 Provide your calendar or booking system URL to include in campaign messages.
               </CardDescription>
@@ -514,7 +484,7 @@ const ReturnJourney = () => {
           {/* Consent & Legal */}
           <Card>
             <CardHeader>
-              <CardTitle>8. Consent & Legal</CardTitle>
+              <CardTitle>7. Consent & Legal</CardTitle>
               <CardDescription>
                 Please confirm your consent for data processing and campaign execution.
               </CardDescription>
@@ -528,7 +498,7 @@ const ReturnJourney = () => {
                     onCheckedChange={(checked) => setFormData(prev => ({ ...prev, dataConsent: checked as boolean }))}
                   />
                   <Label htmlFor="dataConsent" className="text-sm leading-relaxed cursor-pointer">
-                    I consent to BRB processing my personal and business data to execute my return campaign. 
+                    I consent to I Never Left processing my personal and business data to execute my return campaign. 
                     I understand data will be securely deleted within 7 days of campaign completion. *
                   </Label>
                 </div>
@@ -551,7 +521,7 @@ const ReturnJourney = () => {
                     onCheckedChange={(checked) => setFormData(prev => ({ ...prev, marketingConsent: checked as boolean }))}
                   />
                   <Label htmlFor="marketingConsent" className="text-sm leading-relaxed cursor-pointer">
-                    I'd like to receive updates about new BRB services and freelancer resources.
+                    I'd like to receive updates about new I Never Left services and freelancer resources.
                   </Label>
                 </div>
               </div>
