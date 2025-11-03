@@ -86,9 +86,9 @@ const StarterPackage = () => {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
                 <Calendar className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-card-foreground">Social Content</h3>
+              <h3 className="text-2xl font-bold mb-4 text-card-foreground">Social Share Templates</h3>
               <p className="text-muted-foreground">
-                2 social media captions crafted for you with step-by-step posting guidance using your own images
+                2 social media captions crafted for you with your handle featured for easy sharing using your own images
               </p>
             </div>
           </div>

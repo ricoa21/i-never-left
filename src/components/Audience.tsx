@@ -1,36 +1,41 @@
-import { Palette, Briefcase, Heart, Dumbbell, Baby, Sparkles } from "lucide-react";
+import { Palette, Briefcase, Heart, Sparkles, Baby, ShoppingBag } from "lucide-react";
 
 const Audience = () => {
   const freelancerTypes = [
     {
-      title: "Creative Freelancers",
+      title: "Creative Professionals & Content Creators",
       icon: Sparkles,
-      description: "Whatever your creative field, we help you re-ignite professional relationships and opportunities."
+      description: "Visual artists, writers, videographers, and content creators reconnecting with clients and audiences for fresh creative projects."
     },
     {
-      title: "Design Professionals", 
+      title: "Design & Brand Experts", 
       icon: Palette,
-      description: "Re-establish your design presence and connect with brands seeking fresh creative vision."
+      description: "Designers and branding specialists revitalizing their professional presence to deliver innovative visual and brand solutions."
     },
     {
-      title: "Consultants",
+      title: "Consultants & Advisors",
       icon: Briefcase, 
-      description: "Leverage your expanded expertise to re-enter consulting markets with confidence."
+      description: "Experienced industry consultants returning to offer strategic insights and project leadership."
     },
     {
-      title: "Therapists & Wellness",
+      title: "Wellness & Lifestyle Coaches",
       icon: Heart,
-      description: "Reconnect with existing clients and build new therapeutic relationships in your community."
+      description: "A friendly, approachable category for personal trainers, wellness guides, and holistic practitioners inspiring healthier living."
     },
     {
-      title: "Fitness Trainers",
-      icon: Dumbbell,
-      description: "Get back to motivating clients with renewed energy and potentially new fitness insights."
+      title: "Personal Care & Beauty Specialists",
+      icon: Sparkles,
+      description: "Barbers, hairstylists, makeup artists, and body care experts reconnecting with clients for personalized services."
     },
     {
-      title: "Returning From Maternity",
+      title: "Parents Returning To Work After Maternity",
       icon: Baby,
-      description: "Navigate your professional return after maternity leave with confidence, rebuilding client relationships while balancing your new family priorities."
+      description: "Professionals navigating the balance of childcare and career, rebuilding client relationships with confidence after maternity leave."
+    },
+    {
+      title: "Market Vendors & Side Hustlers",
+      icon: ShoppingBag,
+      description: "Individuals who run secondary or part-time freelance businesses, often selling handmade goods, crafts, food, clothing, or other products at independent markets or as side hustles—like clothing creators, chefs, candle makers, and more. This genre supports freelancers balancing multiple income streams or community market participation."
     }
   ];
 

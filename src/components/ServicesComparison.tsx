@@ -9,11 +9,11 @@ const packages = [
     price: "£99",
     popular: false,
     description: "Your simple comeback",
-    breakLength: "Best for 2-6 month breaks",
+    breakLength: "",
     features: [
       "Outreach to 100 contacts",
       "3 message touchpoints",
-      "Social media posts",
+      "Social share templates (your handle featured for easy sharing)",
       "Booking guidance",
       "One-off price - no ongoing fees",
     ],
@@ -21,9 +21,9 @@ const packages = [
   {
     name: "Pro",
     price: "£249",
-    popular: true,
+    popular: false,
     description: "Hands-off relaunch",
-    breakLength: "Best for 3-9 month breaks",
+    breakLength: "",
     features: [
       "Everything in Starter",
       "Outreach to 150 contacts",
@@ -39,7 +39,7 @@ const packages = [
     price: "From £499",
     popular: false,
     description: "Full campaign management",
-    breakLength: "Best for 6-12 month sabbaticals",
+    breakLength: "",
     features: [
       "Everything in Pro",
       "Full social media management",
@@ -101,9 +101,11 @@ const ServicesComparison = () => {
                       {pkg.price}
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    {pkg.breakLength}
-                  </p>
+                  {pkg.breakLength && (
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {pkg.breakLength}
+                    </p>
+                  )}
                   <p className="text-base text-foreground/80 mt-4">
                     {pkg.description}
                   </p>

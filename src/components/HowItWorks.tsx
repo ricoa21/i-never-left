@@ -1,4 +1,4 @@
-import { MessageCircle, Calendar, Target, Zap, TrendingUp } from "lucide-react";
+import { MessageCircle, Calendar, Target, Zap, TrendingUp, Upload } from "lucide-react";
 
 const steps = [
   {
@@ -9,24 +9,30 @@ const steps = [
   },
   {
     number: 2,
+    title: "Upload your client list to our simple template",
+    description: "Easy-to-use template helps organize your contacts for outreach.",
+    icon: Upload,
+  },
+  {
+    number: 3,
     title: "Customize your relaunch plan with your preferences",
     description: "Choose your channels, tone, and style to match your brand.",
     icon: Target,
   },
   {
-    number: 3,
+    number: 4,
     title: "Multi-channel outreach tailored to your audience",
     description: "We craft personalized messages across email, SMS, and social.",
     icon: MessageCircle,
   },
   {
-    number: 4,
+    number: 5,
     title: "Reconnect with clients effortlessly",
-    description: "Your network gets re-engaged while you focus on your return.",
+    description: "Your network gets re-engaged while you focus on time off.",
     icon: Zap,
   },
   {
-    number: 5,
+    number: 6,
     title: "Track your comeback progress in real-time",
     description: "Monitor engagement and bookings as they come in.",
     icon: TrendingUp,
@@ -43,7 +49,7 @@ const HowItWorks = () => {
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {steps.map((step) => (
             <div 
               key={step.number} 
