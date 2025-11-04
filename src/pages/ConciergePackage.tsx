@@ -1,10 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, MessageSquare, Crown, TrendingUp, Sparkles, Calendar } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import Footer from "@/components/Footer";
 
 const ConciergePackage = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Concierge - INL";
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -24,7 +29,7 @@ const ConciergePackage = () => {
           <div className="text-center max-w-4xl mx-auto text-white">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-semibold mb-6">
               <Crown className="w-4 h-4" />
-              CONCIERGE PLAN
+              Concierge
             </div>
             <h1 className="text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg">
               Full-Service Relaunch
