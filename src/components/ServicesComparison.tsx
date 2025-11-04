@@ -133,7 +133,7 @@ const ServicesComparison = () => {
                       ? "bg-foreground text-background hover:bg-foreground/90" 
                       : "bg-transparent border border-border text-foreground hover:bg-muted"
                   }`}
-                  onClick={() => window.location.href = `/${pkg.name.toLowerCase()}-package`}
+                  onClick={() => window.location.href = `/packages/${pkg.name.toLowerCase()}`}
                 >
                   {pkg.name === "Concierge" ? "Find out more" : `Get ${pkg.name}`}
                 </Button>
