@@ -72,7 +72,7 @@ const Footer = () => {
         
         <div className="border-t border-background/20 mt-16 pt-8 text-center">
           <p className="text-background/60">
-            © 2025 I Never Left. Helping UK freelancers return with confidence. All rights reserved.
+            © 2026 I Never Left. Helping UK freelancers return with confidence. All rights reserved.
           </p>
         </div>
       </div>
