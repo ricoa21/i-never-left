@@ -18,7 +18,7 @@ const Footer = () => {
               <Button variant="hero" size="lg" className="text-lg px-8 py-4">
                 Start Your Journey Today
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-background/30 text-background hover:bg-background/10">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-white text-white hover:bg-white/10">
                 Book a Discovery Call
               </Button>
             </div>
@@ -72,7 +72,7 @@ const Footer = () => {
         
         <div className="border-t border-background/20 mt-16 pt-8 text-center">
           <p className="text-background/60">
-            © 2025 I Never Left. Helping UK freelancers return with confidence. All rights reserved.
+            © 2026 I Never Left. Helping UK freelancers return with confidence. All rights reserved.
           </p>
         </div>
       </div>
