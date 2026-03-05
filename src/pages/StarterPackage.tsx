@@ -4,6 +4,12 @@ import { ArrowLeft, Mail, Clock, Instagram, Users, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Footer from "@/components/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const StarterPackage = () => {
   const navigate = useNavigate();
@@ -11,6 +17,41 @@ const StarterPackage = () => {
   useEffect(() => {
     document.title = "Starter — I Never Left";
   }, []);
+
+  const faqs = [
+    {
+      question: "What do I need to provide?",
+      answer: "Your contact list (up to 100 names, email addresses and/or phone numbers), a brief about your business and the service you offer, your preferred tone, and your booking link. That's it — we handle everything else."
+    },
+    {
+      question: "Can I approve the messages before they go out?",
+      answer: "Absolutely. We send you all three messages for sign-off before anything is scheduled. Nothing goes out without your say-so."
+    },
+    {
+      question: "How long does setup take?",
+      answer: "Once we receive your contact list and brief, we'll have your campaign ready within 48 hours. You approve, we schedule, done."
+    },
+    {
+      question: "How are the messages sent?",
+      answer: "The default sequence is Email → SMS → Email+SMS on return day, which is what we've found works best. If you'd prefer a different combination — say all email or all SMS — just let us know when you sign up and we'll tailor it for you."
+    },
+    {
+      question: "Can I upgrade my plan?",
+      answer: "Yes — and you can do it at any point before your return campaign fires. If you upgrade to Pro, you'll get one keep-warm Instagram post for every month remaining in your break. So if you've got 6 months left, that's 6 posts. Upgrade earlier = more posts, more value. Just get in touch and we'll sort it. The only thing we can't do is upgrade after your final return message has gone out."
+    },
+    {
+      question: "What if my return date changes?",
+      answer: "No problem at all. Just let us know and we'll reschedule the campaign around your new date. Dates shift — we're flexible."
+    },
+    {
+      question: "How do the Instagram posts work?",
+      answer: "We create both posts for you — designed, captioned, and ready to go. We'll send them straight to you to publish yourself. No password sharing, no third-party access — just you posting great content that we've made for you. Takes about 30 seconds on your end."
+    },
+    {
+      question: "Is this a one-off payment or a subscription?",
+      answer: "Starter is a one-off payment of £99. No monthly fees, no hidden costs, no surprises."
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -34,7 +75,8 @@ const StarterPackage = () => {
               Your Simple Comeback
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-You've been away. We make sure your clients know you're back. A simple, one-off return campaign — no monthly fees, no faff.            </p>
+              You've been away. We make sure your clients know you're back. A simple, one-off return campaign — no monthly fees, no faff.
+            </p>
             <div className="text-5xl font-bold text-primary mb-8">£99</div>
             <Button size="lg" className="text-lg px-8 py-4 bg-foreground text-background hover:bg-foreground/90">
               Get Started — £99
@@ -64,7 +106,7 @@ You've been away. We make sure your clients know you're back. A simple, one-off 
               {
                 icon: Instagram,
                 title: "2 Instagram posts",
-                description: "We create and publish two posts tagging your handle, ready for you to reshare to your audience.",
+                description: "We create both posts for you — designed, captioned, and ready to go. You publish them yourself with one tap. No password sharing, ever.",
               },
             ].map((item) => (
               <Card key={item.title} className="p-8 border-border">
@@ -103,6 +145,55 @@ You've been away. We make sure your clients know you're back. A simple, one-off 
         </div>
       </section>
 
+      {/* Good to know */}
+      <section className="py-24 bg-background">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center mb-4 text-foreground">
+            Good to know
+          </h2>
+          <p className="text-lg text-muted-foreground text-center mb-14">
+            Everything you'd want to ask before you commit.
+          </p>
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-card border border-border rounded-2xl px-6"
+              >
+                <AccordionTrigger className="hover:no-underline py-6 text-left font-semibold text-foreground">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* How the timing works */}
+      <section className="py-24 bg-muted/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">How the timing works</h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="p-8 bg-card rounded-xl border border-border">
+              <div className="text-primary font-bold mb-2">Before you leave</div>
+              <p className="text-muted-foreground">Message 1 goes out by email. Clients know you're taking a break and when you'll be back.</p>
+            </div>
+            <div className="p-8 bg-card rounded-xl border border-border">
+              <div className="text-primary font-bold mb-2">4 weeks before return</div>
+              <p className="text-muted-foreground">Message 2 goes out by SMS. Short, personal, and gets noticed. Clients start thinking about rebooking.</p>
+            </div>
+            <div className="p-8 bg-card rounded-xl border border-border">
+              <div className="text-primary font-bold mb-2">Return day</div>
+              <p className="text-muted-foreground">Message 3 fires by email and SMS. 2 Instagram posts sent to you ready to publish. Bookings open.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Sample Message */}
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,27 +206,6 @@ You've been away. We make sure your clients know you're back. A simple, one-off 
                 "Hey [Client Name], it's [Your Name] — I'm back and ready to help with [Your Service]. I'd love to reconnect. Here's my booking link: [Link]"
               </p>
             </blockquote>
-          </div>
-        </div>
-      </section>
-
-      {/* How the timing works */}
-      <section className="py-24 bg-muted/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">How the timing works</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="p-8 bg-card rounded-xl border border-border">
-              <div className="text-primary font-bold mb-2">Before you leave</div>
-              <p className="text-muted-foreground">Message 1 goes out. Clients know you're taking a break and when you'll be back.</p>
-            </div>
-            <div className="p-8 bg-card rounded-xl border border-border">
-              <div className="text-primary font-bold mb-2">4 weeks before return</div>
-              <p className="text-muted-foreground">Message 2 builds anticipation. Clients start thinking about rebooking.</p>
-            </div>
-            <div className="p-8 bg-card rounded-xl border border-border">
-              <div className="text-primary font-bold mb-2">Return day</div>
-              <p className="text-muted-foreground">Message 3 fires. 2 Instagram posts go live. Bookings open.</p>
-            </div>
           </div>
         </div>
       </section>
