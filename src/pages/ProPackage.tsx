@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Users, Globe, Instagram, MessageSquare, Zap, Quote } from "lucide-react";
+import { ArrowLeft, Users, Mail, MessageSquare, Zap, Quote, BarChart3 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Footer from "@/components/Footer";
@@ -21,7 +21,7 @@ const ProPackage = () => {
   const faqs = [
     {
       question: "What do I need to provide?",
-      answer: "Your contact list (up to 150 names, email addresses and/or phone numbers), a brief about your business, your preferred tone, your booking link, and your Instagram handle. We handle everything else including the GMB and WhatsApp setup."
+      answer: "Your contact list (up to 200 names, email addresses and/or phone numbers), a brief about your business, your preferred tone, and your booking link. That's it — we handle everything else."
     },
     {
       question: "Can I approve everything before it goes out?",
@@ -50,10 +50,6 @@ const ProPackage = () => {
     {
       question: "What if my return date changes?",
       answer: "No problem. We'll reschedule your entire campaign and keep-warm schedule around your new date. Your Buffer queue updates too."
-    },
-    {
-      question: "How does the GMB and WhatsApp setup work?",
-      answer: "We update your Google My Business profile with your return date and updated details, and set up WhatsApp Business so clients can reach you easily. No passwords stored, ever."
     },
     {
       question: "What does the post-return support include?",
@@ -125,23 +121,23 @@ const ProPackage = () => {
             {[
               {
                 icon: Users,
-                title: "150 contacts",
-                description: "Wider outreach to your full professional network, not just your closest clients.",
+                title: "200 contacts",
+                description: "Maximum reach across your full professional network. Double the Starter plan, making sure no client gets left behind.",
               },
               {
-                icon: Globe,
-                title: "Google My Business & WhatsApp",
-                description: "We update your GMB profile and set up WhatsApp Business so clients can find and reach you easily.",
-              },
-              {
-                icon: Instagram,
+                icon: Mail,
                 title: "Keep Warm Monthly Posts",
                 description: "One post per month during your entire break (up to 12 months). Pre-approved by you, auto-scheduled via Buffer. Your audience never forgets you exist.",
               },
               {
+                icon: BarChart3,
+                title: "Return week content",
+                description: "4 posts published across your return week — announcement, behind the scenes, booking reminder, wrap-up. Maximum visibility when it matters most.",
+              },
+              {
                 icon: MessageSquare,
                 title: "Engagement tracking",
-                description: "See who's opening, clicking, and responding — so you know exactly how your comeback is landing.",
+                description: "See who's opening, clicking, and responding — plus a 30 day post-return check-in so you know exactly how your comeback landed.",
               },
             ].map((item) => (
               <Card key={item.title} className="p-8 border-border">
@@ -201,13 +197,13 @@ const ProPackage = () => {
             </div>
             <div className="p-8 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-2">4 weeks before return</div>
-              <p className="text-muted-foreground">Message 2 goes out by SMS to all 150 contacts. Short, personal, gets noticed. Clients start thinking about rebooking.</p>
+              <p className="text-muted-foreground">Message 2 goes out by SMS to all 200 contacts. Short, personal, gets noticed. Clients start thinking about rebooking.</p>
             </div>
             <div className="p-8 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-2">Return week</div>
               <p className="text-muted-foreground">Message 3 fires by email and SMS. 4 posts published across your return week — announcement, behind the scenes, booking reminder, wrap-up. Bookings open.</p>
             </div>
-            <div className="p-8 bg-card rounded-xl border border-border border-primary/50 bg-primary/5">
+            <div className="p-8 bg-card rounded-xl border border-primary/50 bg-primary/5">
               <div className="text-primary font-bold mb-2">Example ✦</div>
               <p className="text-muted-foreground">A barber takes 9 months off. Pro creates 9 monthly posts keeping their chair front of mind — then fires the full return campaign. By the time they're back, clients are already booked in. £249 total.</p>
             </div>
