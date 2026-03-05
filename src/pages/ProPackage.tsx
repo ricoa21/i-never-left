@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Users, Globe, Instagram, BarChart3, Zap } from "lucide-react";
+import { ArrowLeft, Users, Globe, Instagram, MessageSquare, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Footer from "@/components/Footer";
@@ -30,7 +30,7 @@ const ProPackage = () => {
               Hands-Off Relaunch
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              For established professionals who want a more powerful comeback — more contacts, more channels, more control.
+              You're away for a while. We keep your audience warm the whole time — then make sure they're ready and waiting when you return.
             </p>
             <div className="text-5xl font-bold text-primary mb-8">£249</div>
             <Button size="lg" className="text-lg px-8 py-4 bg-foreground text-background hover:bg-foreground/90">
@@ -60,11 +60,11 @@ const ProPackage = () => {
               },
               {
                 icon: Instagram,
-                title: "4 Instagram posts",
-                description: "More content, more visibility. Posted via partner access with your privacy fully protected.",
+                title: "Keep Warm Monthly Posts",
+                description: "One branded Instagram post per month during your entire break (up to 12 months). Pre-approved by you, auto-scheduled by us. Your audience never forgets you exist.",
               },
               {
-                icon: BarChart3,
+                icon: MessageSquare,
                 title: "Engagement tracking",
                 description: "See who's opening, clicking, and responding — so you know exactly how your comeback is landing.",
               },
@@ -92,21 +92,57 @@ const ProPackage = () => {
             <Card className="p-8 border-border">
               <Users className="w-8 h-8 text-primary mb-5" />
               <p className="text-lg text-card-foreground leading-relaxed">
-                You've been away 3–9 months and want a more comprehensive relaunch than a basic email blast.
+                You've built a strong professional reputation and want a comeback that matches it.
               </p>
             </Card>
             <Card className="p-8 border-border">
               <Zap className="w-8 h-8 text-primary mb-5" />
               <p className="text-lg text-card-foreground leading-relaxed">
-                You want deeper analytics, WhatsApp integration, and a stronger social presence from day one.
+                You want deeper reach, more channels, and the data to know it's working.
               </p>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Sample Messages */}
+      {/* How the timing works */}
       <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center mb-14 text-foreground">
+            How the timing works
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="p-8 bg-card rounded-xl border border-border">
+              <div className="text-primary font-bold mb-2">Day 1</div>
+              <p className="text-muted-foreground">Your keep-warm posts are created in Canva, you approve them once. Done.</p>
+            </div>
+            <div className="p-8 bg-card rounded-xl border border-border">
+              <div className="text-primary font-bold mb-2">Every month you're away</div>
+              <p className="text-muted-foreground">One post goes out automatically. Countdown themes, back-soon messaging, early booking teasers.</p>
+            </div>
+            <div className="p-8 bg-card rounded-xl border border-border">
+              <div className="text-primary font-bold mb-2">4 weeks before return</div>
+              <p className="text-muted-foreground">Return campaign begins. Messages sent across email and SMS to all 150 contacts.</p>
+            </div>
+            <div className="p-8 bg-card rounded-xl border border-border">
+              <div className="text-primary font-bold mb-2">Return day</div>
+              <p className="text-muted-foreground">Final message fires. 4 Instagram posts go live. Bookings open.</p>
+            </div>
+            <div className="p-8 bg-card rounded-xl border border-border">
+              <div className="text-primary font-bold mb-2">For 3 months after</div>
+              <p className="text-muted-foreground">We monitor engagement, send SMS nudges to non-responders, and track bookings coming in.</p>
+            </div>
+            <div className="p-8 bg-card rounded-xl border border-border border-primary/50 bg-primary/5">
+              <div className="text-primary font-bold mb-2">Example ✦</div>
+              <p className="text-muted-foreground">A barber takes 9 months off. Pro generates 9 monthly posts keeping their chair front of mind — then fires the full return campaign. By return day, their DMs are already full. £249 total.</p>
+            </div>
+          </div>
+          <p className="text-center text-sm text-muted-foreground mt-8">Includes 1 Instagram post per month of your break, up to 12 months maximum.</p>
+        </div>
+      </section>
+
+      {/* Sample Messages */}
+      <section className="py-24 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-14 text-foreground">
             A message that means business
@@ -135,7 +171,7 @@ const ProPackage = () => {
             Choose Pro — £249
           </Button>
           <p className="text-sm opacity-75">
-            *Includes ongoing monthly support after your return
+            Includes 1 keep-warm post per month of your break, up to 12 months maximum.
           </p>
         </div>
       </section>

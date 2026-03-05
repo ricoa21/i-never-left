@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Crown, CalendarCheck, Users, BarChart3, Sparkles, Zap } from "lucide-react";
+import { ArrowLeft, Crown, CalendarCheck, Users, BarChart3, Sparkles, Zap, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Footer from "@/components/Footer";
@@ -36,7 +36,7 @@ const ConciergePackage = () => {
               Full-Service Relaunch
             </h1>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              We handle everything — before you leave, while you're away, and when you return. You just show up.
+              Full presence management from the day you leave to months after you return. You focus on your break — we make sure your business never misses a beat.
             </p>
             <div className="text-5xl font-bold mb-8">From £499</div>
             <a href="mailto:hello@ineverleft.co.uk">
@@ -58,23 +58,23 @@ const ConciergePackage = () => {
             {[
               {
                 icon: CalendarCheck,
-                title: "Full campaign setup",
-                description: "Everything planned and scheduled before you even return. Daily posting, engagement, and DM management handled for you.",
+                title: "Weekly content while you're away",
+                description: "Not one post a month — weekly IG posts, stories, and updates keeping your audience fully engaged throughout your entire absence.",
               },
               {
-                icon: Users,
-                title: "Pre & post-return support",
-                description: "We're with you from before you leave to months after your return. Weekly IG posts, stories, and launch week daily engagement.",
+                icon: MessageSquare,
+                title: "DMs, comments & enquiries managed",
+                description: "We handle every message that comes in while you're away. Clients get responses, bookings get logged, nothing falls through the cracks.",
               },
               {
                 icon: BarChart3,
-                title: "Booking & reporting",
-                description: "Ongoing calendar integration, direct booking management, and monthly performance reports so you always know what's working.",
+                title: "Full return campaign",
+                description: "Pre-return build-up, launch day content, and post-return follow-up — all managed by your dedicated account manager.",
               },
               {
                 icon: Sparkles,
-                title: "Premium add-ons",
-                description: "Optional photography, videography, paid ads, and multi-platform management across TikTok and LinkedIn.",
+                title: "Monthly reporting & premium add-ons",
+                description: "You get a monthly performance report throughout. Optional extras: photography, videography, paid ads, TikTok and LinkedIn management.",
               },
             ].map((item) => (
               <Card key={item.title} className="p-8 border-border">
@@ -100,13 +100,13 @@ const ConciergePackage = () => {
             <Card className="p-8 border-border">
               <Users className="w-8 h-8 text-primary mb-5" />
               <p className="text-lg text-card-foreground leading-relaxed">
-                You've been away 6–12+ months and need a serious, managed relaunch — not just a few emails.
+                You've been away a while and want everything handled — no DIY, no guesswork.
               </p>
             </Card>
             <Card className="p-8 border-border">
               <Zap className="w-8 h-8 text-primary mb-5" />
               <p className="text-lg text-card-foreground leading-relaxed">
-                You want everything handled. Content, engagement, bookings, reporting — all off your plate.
+                You need content, engagement, bookings and reporting fully managed while you focus on returning.
               </p>
             </Card>
           </div>

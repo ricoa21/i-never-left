@@ -34,8 +34,7 @@ const StarterPackage = () => {
               Your Simple Comeback
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Perfect for freelancers and parents returning from a short break who want a clean, confident relaunch without the faff.
-            </p>
+You've been away. We make sure your clients know you're back. A simple, one-off return campaign — no monthly fees, no faff.            </p>
             <div className="text-5xl font-bold text-primary mb-8">£99</div>
             <Button size="lg" className="text-lg px-8 py-4 bg-foreground text-background hover:bg-foreground/90">
               Get Started — £99
@@ -91,7 +90,7 @@ const StarterPackage = () => {
             <Card className="p-8 border-border">
               <Users className="w-8 h-8 text-primary mb-5" />
               <p className="text-lg text-card-foreground leading-relaxed">
-                You've been away 2–6 months and have an existing client base that's gone quiet.
+                Whether you've been travelling, had a baby, or just needed a break — if your client list is warm, Starter gets you back in business.
               </p>
             </Card>
             <Card className="p-8 border-border">
@@ -128,6 +127,25 @@ const StarterPackage = () => {
             Start Your Comeback — £99
           </Button>
         </div>
+
+        <section className="py-20 bg-muted/20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-4xl font-bold text-center mb-12 text-foreground">How the timing works</h2>
+    <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div className="p-8 bg-card rounded-xl border border-border">
+        <div className="text-primary font-bold mb-2">Before you leave</div>
+        <p className="text-muted-foreground">Message 1 goes out. Clients know you're taking a break and when you'll be back.</p>
+      </div>
+      <div className="p-8 bg-card rounded-xl border border-border">
+        <div className="text-primary font-bold mb-2">4 weeks before return</div>
+        <p className="text-muted-foreground">Message 2 builds anticipation. Clients start thinking about rebooking.</p>
+      </div>
+      <div className="p-8 bg-card rounded-xl border border-border">
+        <div className="text-primary font-bold mb-2">Return day</div>
+        <p className="text-muted-foreground">Message 3 fires. 2 Instagram posts go live. Bookings open.</p>
+      </div>
+    </div>
+  </div>
       </section>
 
       <Footer />
