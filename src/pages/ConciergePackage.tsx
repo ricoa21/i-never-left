@@ -21,27 +21,31 @@ const ConciergePackage = () => {
   const faqs = [
     {
       question: "What's included in the £499?",
-      answer: "Everything in Pro plus a dedicated human account manager, 2 social posts per week for the duration of your break, your full return campaign, and your first month back fully managed. After that, continue for £99 per month or walk away. No lock-in."
+      answer: "Everything in Pro plus a dedicated human account manager, monthly keep-warm posts while you are away, your full return campaign, and 3 full months of post-return support. It covers your entire break and your first 3 months back. After that, continue from £99 per month or walk away. No lock-in."
     },
     {
       question: "How long does £499 cover?",
-      answer: "Your entire break plus your first month back. A 3 month break or a 12 month break, same £499. The only cap is on keep-warm posts which max out at 12 months, same as Pro."
+      answer: "Your entire break — however long that is — plus 3 months after your return. The only cap is on keep-warm posts which max out at 12 months, same as Pro."
     },
     {
       question: "What does the dedicated account manager do?",
       answer: "Your account manager is a real person — not a bot, not an automated system. They know your name, your industry, your clients, and your comeback story. From day one they handle your campaign setup, approve content with you, manage your social scheduling, and are on hand throughout your break for any changes or questions. One human, full accountability."
     },
     {
-      question: "How are the weekly social posts handled?",
-      answer: "We create 2 posts per week for the duration of your break. You approve the content plan upfront and we handle scheduling via Buffer. You can review and request changes at any time."
+      question: "What does the 3 months post-return support include?",
+      answer: "Month 1: 2 posts per week, DMs monitored during return week, booking enquiries logged and followed up. Month 2: 1 post per week, one SMS nudge to anyone who hasn't rebooked, a check-in call with your account manager. Month 3: 1 post per week, full performance report, and a handover pack covering what worked and how to keep the momentum going yourself."
     },
     {
       question: "What happens during my return week?",
-      answer: "Your full return campaign fires — email and SMS to your entire contact list. On top of that we publish daily content during your launch week for maximum visibility."
+      answer: "Your full return campaign fires — email and SMS to your entire contact list. Daily content published all week. DMs monitored so nothing gets missed. It is the biggest moment of the whole campaign and we treat it that way."
+    },
+    {
+      question: "How are messages sent?",
+      answer: "Message 1 goes out by email or SMS before you leave — whichever suits you best. Message 2 goes out by SMS 4 weeks before your return, though this can also be sent by email if you prefer — just let us know when you sign up. Message 3 fires by both email and SMS on return day for maximum reach."
     },
     {
       question: "What are the optional add-ons?",
-      answer: "DM and comment management during return week — £49 one-off. Extended monthly management after your first month back — £99 per month. Additional platforms — £49 per month per platform for TikTok or LinkedIn. Premium content via Company Content — custom quote."
+      answer: "Additional platforms — from £49 per month per platform for TikTok or LinkedIn. Premium content — need professional photography, video or animation? Through our friends at Company Content we can source the right creative talent. Custom quote."
     },
     {
       question: "What if I don't have social media?",
@@ -49,7 +53,7 @@ const ConciergePackage = () => {
     },
     {
       question: "Can I downgrade to Pro?",
-      answer: "Yes — at any point before your campaign launches. Just get in touch and we'll adjust accordingly."
+      answer: "Yes — but only before your return campaign fires. Once your return week begins, the 3 month post-return support kicks in automatically and the full £499 applies. If you have not notified us before return day, the Concierge rate stands. Get in touch before that point and we will adjust without any fuss."
     },
     {
       question: "What if my return date changes?",
@@ -57,11 +61,11 @@ const ConciergePackage = () => {
     },
     {
       question: "What happens if some messages bounce?",
-      answer: "We send everything from verified infrastructure to keep delivery rates high. If anything bounces we'll let you know and you can swap in replacement contacts within 48 hours."
+      answer: "We send everything from verified infrastructure to keep delivery rates high. If anything bounces we will let you know and you can swap in replacement contacts within 48 hours. Worth making sure your list is up to date before we kick off."
     },
     {
       question: "Is the £499 a one-off payment?",
-      answer: "Yes — £499 is a one-off payment covering your entire break and first month back. After that, £99 per month if you want to continue. No hidden fees, cancel anytime."
+      answer: "Yes — £499 is a one-off payment covering your entire break and 3 months back. After that, if you want to keep the momentum going, we can continue from £99 per month. No hidden fees, cancel anytime."
     },
   ];
 
@@ -107,7 +111,7 @@ const ConciergePackage = () => {
               Full-Service Relaunch
             </h1>
             <p className="text-xl mb-6 opacity-90 max-w-2xl mx-auto">
-              Full presence management from the day you leave to months after you return. You focus on your break — we make sure your business never misses a beat.
+              Full presence management from the day you leave to 3 months after you return. You focus on your break — we make sure your business never misses a beat.
             </p>
             <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 mb-8">
               <UserCheck className="w-4 h-4" />
@@ -130,28 +134,28 @@ const ConciergePackage = () => {
             What's included
           </h2>
           <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-14">
-            Everything in Pro, plus a dedicated human account manager and weekly content for your entire time away.
+            Everything in Pro, plus a dedicated human account manager and 3 full months of post-return support.
           </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card className="p-8 border-border">
               <UserCheck className="w-8 h-8 text-primary mb-5" />
               <h3 className="text-xl font-semibold text-card-foreground mb-3">Your own account manager</h3>
-              <p className="text-muted-foreground leading-relaxed">A real person — not a bot. They know your name, your industry, and your comeback story. One human, full accountability, from day one to your return.</p>
+              <p className="text-muted-foreground leading-relaxed">A real person — not a bot. They know your name, your industry, and your comeback story. One human, full accountability, from day one to 3 months after your return.</p>
             </Card>
             <Card className="p-8 border-border">
               <CalendarCheck className="w-8 h-8 text-primary mb-5" />
-              <h3 className="text-xl font-semibold text-card-foreground mb-3">2 posts per week while you are away</h3>
-              <p className="text-muted-foreground leading-relaxed">Not one post a month — twice weekly content keeping your audience fully engaged throughout your entire absence. Pre-approved by you, scheduled by us.</p>
+              <h3 className="text-xl font-semibold text-card-foreground mb-3">3 months post-return support</h3>
+              <p className="text-muted-foreground leading-relaxed">Month 1: 2 posts per week and DMs managed. Month 2: 1 post per week and an SMS nudge to non-rebookers. Month 3: 1 post per week, performance report, and handover pack.</p>
             </Card>
             <Card className="p-8 border-border">
               <BarChart3 className="w-8 h-8 text-primary mb-5" />
               <h3 className="text-xl font-semibold text-card-foreground mb-3">Full return campaign</h3>
-              <p className="text-muted-foreground leading-relaxed">Pre-return build-up, daily launch week content, and post-return follow-up — all managed by your account manager.</p>
+              <p className="text-muted-foreground leading-relaxed">Pre-return build-up, daily launch week content, and DMs monitored throughout — all managed by your account manager.</p>
             </Card>
             <Card className="p-8 border-border">
               <Sparkles className="w-8 h-8 text-primary mb-5" />
               <h3 className="text-xl font-semibold text-card-foreground mb-3">Optional add-ons</h3>
-              <p className="text-muted-foreground leading-relaxed">DM management, extended monthly support, additional platforms, and premium content creation available. Build the package that is right for you.</p>
+              <p className="text-muted-foreground leading-relaxed">Additional platforms, premium content via Company Content, and extended monthly management available. Build the package that is right for you.</p>
             </Card>
           </div>
         </div>
@@ -162,20 +166,20 @@ const ConciergePackage = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Simple, transparent pricing</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            £499 covers your entire break and your first month back. After that, continue for £99 per month — cancel anytime.
+            £499 — your entire break managed, plus 3 months back on your feet. After that, if you want to keep the momentum going, we can continue from £99/month.
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="p-4 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-1">Base — £499</div>
-              <p className="text-sm text-muted-foreground">Entire break plus first month back</p>
+              <p className="text-sm text-muted-foreground">Entire break plus 3 months back</p>
             </div>
             <div className="p-4 bg-card rounded-xl border border-border">
-              <div className="text-primary font-bold mb-1">Continue — £99/month</div>
-              <p className="text-sm text-muted-foreground">2 posts per week, reporting, booking management</p>
+              <div className="text-primary font-bold mb-1">Continue — from £99/month</div>
+              <p className="text-sm text-muted-foreground">Ongoing posts, reporting, booking management</p>
             </div>
             <div className="p-4 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-1">Add-ons — from £49</div>
-              <p className="text-sm text-muted-foreground">DMs, extra platforms, premium content</p>
+              <p className="text-sm text-muted-foreground">Extra platforms, premium content</p>
             </div>
           </div>
         </div>
@@ -198,7 +202,7 @@ const ConciergePackage = () => {
             <Card className="p-8 border-border">
               <Zap className="w-8 h-8 text-primary mb-5" />
               <p className="text-lg text-card-foreground leading-relaxed">
-                You need content, engagement, bookings and reporting fully managed while you focus on what matters.
+                You want a dedicated human managing your comeback from start to finish — not just a campaign but a proper relaunch.
               </p>
             </Card>
           </div>
@@ -209,30 +213,31 @@ const ConciergePackage = () => {
       <section className="py-24 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-14 text-foreground">How the timing works</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div className="p-8 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-2">Before you leave</div>
-              <p className="text-muted-foreground">Message 1 goes out by email or SMS. Content plan approved, everything scheduled. Clients know you are taking a break and when you will be back.</p>
+              <p className="text-muted-foreground">Message 1 goes out by email or SMS. Account manager assigned, content plan approved, everything scheduled. Clients know you are taking a break and when you will be back.</p>
             </div>
             <div className="p-8 bg-card rounded-xl border border-border">
-              <div className="text-primary font-bold mb-2">Every week you are away</div>
-              <p className="text-muted-foreground">2 posts per week go out automatically. Your account manager monitors performance. Your audience stays warm the whole time.</p>
+              <div className="text-primary font-bold mb-2">Every month you are away</div>
+              <p className="text-muted-foreground">One keep-warm post goes out automatically — countdown themes, back-soon messaging, early booking teasers. Your audience never forgets you exist.</p>
             </div>
             <div className="p-8 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-2">4 weeks before return</div>
-              <p className="text-muted-foreground">Message 2 goes out by SMS to your full contact list. Return campaign begins. Early booking teasers go live on social.</p>
+              <p className="text-muted-foreground">Message 2 goes out to your full contact list.* Return campaign begins building. Early booking teasers ramp up.</p>
+              <p className="text-xs text-muted-foreground mt-3">*Sent by SMS by default — just let us know if you prefer email.</p>
             </div>
             <div className="p-8 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-2">Return week</div>
-              <p className="text-muted-foreground">Message 3 fires by email and SMS. Daily content published all week. Maximum visibility, maximum bookings.</p>
+              <p className="text-muted-foreground">Message 3 fires by email and SMS. Daily content published all week. DMs monitored so nothing gets missed. Maximum visibility, maximum bookings.</p>
             </div>
             <div className="p-8 bg-card rounded-xl border border-border">
-              <div className="text-primary font-bold mb-2">First month back — included</div>
-              <p className="text-muted-foreground">2 posts per week continue. Engagement tracked, bookings monitored, performance report delivered at month end.</p>
+              <div className="text-primary font-bold mb-2">Months 1 to 3 back</div>
+              <p className="text-muted-foreground">Month 1: 2 posts per week, bookings logged. Month 2: 1 post per week, SMS nudge to non-rebookers, check-in call. Month 3: 1 post per week, performance report, handover pack.</p>
             </div>
             <div className="p-8 bg-card rounded-xl border border-primary/50 bg-primary/5">
-              <div className="text-primary font-bold mb-2">After that — optional</div>
-              <p className="text-muted-foreground">Continue for £99 per month — 2 posts per week, monthly reporting, booking management. Cancel anytime.</p>
+              <div className="text-primary font-bold mb-2">After that — your call</div>
+              <p className="text-muted-foreground">If you want to keep the momentum going, we can continue from £99/month. Or take what we have built and run with it yourself. Either way, you are back in business.</p>
             </div>
           </div>
         </div>
@@ -314,7 +319,7 @@ const ConciergePackage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to make a big comeback?</h2>
           <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
-            Concierge is our most powerful plan — priced from £499 and fully customised to your needs. A real human will be with you every step of the way.
+            £499 — your entire break managed, plus 3 months back on your feet. After that, if you want to keep the momentum going, we can continue from £99/month.
           </p>
           <a href="mailto:hello@ineverleft.co.uk">
             <Button size="lg" className="text-lg px-8 py-4 bg-white text-primary hover:bg-white/90">
