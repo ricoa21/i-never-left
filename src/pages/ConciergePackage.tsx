@@ -4,6 +4,12 @@ import { ArrowLeft, Crown, CalendarCheck, Users, BarChart3, Sparkles, Zap, Messa
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Footer from "@/components/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const ConciergePackage = () => {
   const navigate = useNavigate();
@@ -14,12 +20,12 @@ const ConciergePackage = () => {
 
   const faqs = [
     {
-      question: "What's included in the 499?",
-      answer: "Everything in Pro plus a dedicated human account manager, 2 social posts per week for the duration of your break, your full return campaign, and your first month back fully managed. After that, continue for 99 per month or walk away. No lock-in."
+      question: "What's included in the £499?",
+      answer: "Everything in Pro plus a dedicated human account manager, 2 social posts per week for the duration of your break, your full return campaign, and your first month back fully managed. After that, continue for £99 per month or walk away. No lock-in."
     },
     {
-      question: "How long does 499 cover?",
-      answer: "Your entire break plus your first month back. A 3 month break or a 12 month break, same 499. The only cap is on keep-warm posts which max out at 12 months, same as Pro."
+      question: "How long does £499 cover?",
+      answer: "Your entire break plus your first month back. A 3 month break or a 12 month break, same £499. The only cap is on keep-warm posts which max out at 12 months, same as Pro."
     },
     {
       question: "What does the dedicated account manager do?",
@@ -35,7 +41,7 @@ const ConciergePackage = () => {
     },
     {
       question: "What are the optional add-ons?",
-      answer: "DM and comment management during return week — 49 one-off. Extended monthly management after your first month back — 99 per month. Additional platforms — 49 per month per platform for TikTok or LinkedIn. Premium content via Company Content — custom quote."
+      answer: "DM and comment management during return week — £49 one-off. Extended monthly management after your first month back — £99 per month. Additional platforms — £49 per month per platform for TikTok or LinkedIn. Premium content via Company Content — custom quote."
     },
     {
       question: "What if I don't have social media?",
@@ -54,8 +60,8 @@ const ConciergePackage = () => {
       answer: "We send everything from verified infrastructure to keep delivery rates high. If anything bounces we'll let you know and you can swap in replacement contacts within 48 hours."
     },
     {
-      question: "Is the 499 a one-off payment?",
-      answer: "Yes — 499 is a one-off payment covering your entire break and first month back. After that, 99 per month if you want to continue. No hidden fees, cancel anytime."
+      question: "Is the £499 a one-off payment?",
+      answer: "Yes — £499 is a one-off payment covering your entire break and first month back. After that, £99 per month if you want to continue. No hidden fees, cancel anytime."
     },
   ];
 
@@ -284,14 +290,22 @@ const ConciergePackage = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-4 text-foreground">Good to know</h2>
           <p className="text-lg text-muted-foreground text-center mb-14">Everything you would want to ask before you commit.</p>
-          <div className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-card border border-border rounded-2xl p-6">
-                <p className="font-semibold text-foreground mb-2">{faq.question}</p>
-                <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
-              </div>
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-card border border-border rounded-2xl px-6"
+              >
+                <AccordionTrigger className="hover:no-underline py-6 text-left font-semibold text-foreground">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
