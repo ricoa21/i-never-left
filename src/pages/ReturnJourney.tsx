@@ -127,7 +127,7 @@ const ReturnJourney = () => {
       data.append("marketingConsent", formData.marketingConsent ? "Yes" : "No");
       if (contactListFile) data.append("contactList", contactListFile);
 
-      const response = await fetch("https://formspree.io/f/xqapergy", {
+      const response = await fetch("https://formspree.io/f/xaqpergy", {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
