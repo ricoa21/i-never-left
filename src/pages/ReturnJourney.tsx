@@ -372,7 +372,7 @@ const ReturnJourney = () => {
                   </div>
                 ))}
               </div>
-            </CardContent>
+            </CardContent> 
           </Card>
 
           <Card>
