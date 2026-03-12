@@ -94,9 +94,12 @@ const ReturnJourney = () => {
     if (file) setContactListFile(file);
   };
 
-  const downloadTemplate = () => {
+   const downloadTemplate = () => {
     const csvContent =
-      "Name,Channel Preference,Phone,Email,Notes\nJohn Smith,SMS,07123456789,john@example.com,Previous client\nJane Doe,Email,,jane@example.com,Potential collaboration";
+      "Name,Channel Preference,Phone,Email,Notes\n" +
+      "John Smith,SMS,07123456789,john@example.com,Previous client\n" +
+      "Jane Doe,Email,,jane@example.com,Potential collaboration";
+
     const blob = new Blob([csvContent], { type: "text/csv" });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -124,7 +127,7 @@ const ReturnJourney = () => {
       data.append("marketingConsent", formData.marketingConsent ? "Yes" : "No");
       if (contactListFile) data.append("contactList", contactListFile);
 
-      const response = await fetch("https://formspree.io/f/xaqpergy", {
+      const response = await fetch("https://formspree.io/f/xqapergy", {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
@@ -340,8 +343,9 @@ const ReturnJourney = () => {
                         <ul className="mt-2 space-y-1">
                           {pkg.features.map((feature, index) => (
                             <li key={index} className="text-sm text-muted-foreground">
-                              {feature}
-                            </li>
+  {feature}
+</li>
+
                           ))}
                         </ul>
                       </div>
