@@ -11,12 +11,12 @@ const FAQ = () => {
     {
       icon: Shield,
       question: "How is my data protected?",
-      answer: "All information is encrypted end-to-end and only accessed by your dedicated campaign manager. We use industry-standard security protocols, and your data is automatically deleted 7 days after your campaign launch. We never share or sell your information to third parties."
+      answer: "All information is encrypted and only accessed by your dedicated campaign manager. We use industry-standard security protocols. Your contact list data is permanently deleted within 30 days of your campaign completing. We never share or sell your information to third parties."
     },
     {
       icon: Trash2,
       question: "What if I want my data deleted?",
-      answer: "You can request data deletion at any time during or after your campaign. Simply contact us, and your information will be permanently removed from our systems within 72 hours. We provide written confirmation once deletion is complete."
+      answer: "You can request data deletion at any time during or after your campaign. Simply contact us at hello@ineverleft.co.uk and your information will be permanently removed from our systems. We provide written confirmation once deletion is complete."
     },
     {
       icon: Lock,
@@ -26,17 +26,17 @@ const FAQ = () => {
     {
       icon: HelpCircle,
       question: "What happens after I sign up?",
-      answer: "After signup, you'll complete a quick 10-minute intake form about your business and target clients. Within 24-48 hours, we'll prepare your campaign materials and contact lists. Then we launch your comeback, reconnecting you with your professional network while you focus on delivering great work."
+      answer: "After signup, you'll complete a quick intake form about your business and clients. Within 24 hours, we'll be in touch to arrange a brief consultation call. We then build your campaign, you approve everything, and we handle the rest."
     },
     {
       icon: FileText,
       question: "Are you GDPR compliant?",
-      answer: "Yes, we are fully GDPR compliant. We only process data necessary for your campaign, maintain transparent data handling practices, and ensure your rights to access, rectify, and erase your data at any time. All our practices align with UK and EU data protection regulations."
+      answer: "Yes, fully. We only process data necessary for your campaign, maintain transparent data handling practices, and ensure your rights to access, rectify, and erase your data at any time. All our practices align with UK GDPR and the Data Protection Act 2018. We are registered with the ICO."
     },
     {
       icon: Shield,
-      question: "How do you handle client data?",
-      answer: "Client contact information is handled with the same strict security standards. We only use data you provide or publicly available professional information. All outreach is personalized and permission-based, respecting anti-spam regulations and professional etiquette."
+      question: "How do you handle client contact lists?",
+      answer: "Your uploaded contact list is used solely to deliver your campaign — nothing else. We act as a data processor on your behalf. All contact data is permanently deleted within 30 days of your campaign completing. By uploading a list, you confirm you have the necessary consent to contact those individuals."
     }
   ];
 
@@ -54,8 +54,8 @@ const FAQ = () => {
 
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem 
-              key={index} 
+            <AccordionItem
+              key={index}
               value={`item-${index}`}
               className="bg-card border border-border rounded-2xl px-6 shadow-soft hover:shadow-medium transition-shadow"
             >
@@ -84,12 +84,12 @@ const FAQ = () => {
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             For complete details about our data handling, security practices, and GDPR compliance, please review our comprehensive policy documents.
           </p>
-          <a 
-            href="#" 
+          
+            href="/compliance"
             className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
           >
             <FileText className="w-5 h-5" />
-            View Full GDPR & Privacy Policy
+            View Full Compliance Documentation
           </a>
         </div>
       </div>

@@ -45,7 +45,7 @@ const packages = [
 
 const ServicesComparison = () => {
   return (
-    <section className="py-32 px-4 bg-background">
+    <section id="services" className="py-32 px-4 bg-background">
       <div className="container mx-auto max-w-7xl">
 
         {/* Header */}
