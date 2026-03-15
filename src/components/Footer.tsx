@@ -73,11 +73,12 @@ const Footer = () => {
           <div className="flex flex-col items-center gap-3 text-center">
             <INLLogo variant="light" size={36} />
             <p className="text-background/60">
-              © 2026 I Never Left Ltd. Helping UK freelancers return with confidence. All rights reserved.
+              © 2026 I Never Left. Helping UK freelancers return with confidence. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-background/40">
               <a href="/privacy-policy" className="hover:text-background/70 transition-colors">Privacy Policy</a>
               <a href="/terms" className="hover:text-background/70 transition-colors">Terms & Conditions</a>
+              <a href="/compliance" className="hover:text-background/70 transition-colors">Compliance</a>
             </div>
           </div>
         </div>
