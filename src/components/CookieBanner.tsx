@@ -3,8 +3,28 @@ import { Link } from "react-router-dom";
 import { X } from "lucide-react";
 
 const COOKIE_KEY = "inl_cookie_consent";
+const GA_ID = "G-7M99ZJ236N";
 
 type ConsentState = "accepted" | "declined" | null;
+
+const loadGA = () => {
+  if (document.getElementById("ga-script")) return;
+  const script = document.createElement("script");
+  script.id = "ga-script";
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(script);
+
+  script.onload = () => {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: unknown[]) {
+      window.dataLayer.push(args);
+    }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", GA_ID, { anonymize_ip: true });
+  };
+};
 
 const CookieBanner = () => {
   const [consent, setConsent] = useState<ConsentState>(null);
@@ -13,11 +33,11 @@ const CookieBanner = () => {
   useEffect(() => {
     const stored = localStorage.getItem(COOKIE_KEY) as ConsentState;
     if (!stored) {
-      // Small delay so it doesn't flash immediately on load
       const timer = setTimeout(() => setVisible(true), 1200);
       return () => clearTimeout(timer);
     } else {
       setConsent(stored);
+      if (stored === "accepted") loadGA();
     }
   }, []);
 
@@ -25,8 +45,7 @@ const CookieBanner = () => {
     localStorage.setItem(COOKIE_KEY, "accepted");
     setConsent("accepted");
     setVisible(false);
-    // When you add analytics later, initialise it here
-    // e.g. window.gtag('consent', 'update', { analytics_storage: 'granted' })
+    loadGA();
   };
 
   const handleDecline = () => {
@@ -91,5 +110,12 @@ const CookieBanner = () => {
     </div>
   );
 };
+
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+  }
+}
 
 export default CookieBanner;
