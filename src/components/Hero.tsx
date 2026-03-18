@@ -194,10 +194,10 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left: Text Content */}
-          <div className="space-y-8 text-center lg:text-left">
+          <div className="space-y-6 text-center lg:text-left">
 
             {/* Logo + wordmark */}
-            <div className="flex items-center gap-3 mb-2">
+            <div className="flex items-center gap-3">
               <INLLogo
                 variant="dark"
                 size={40}
@@ -214,7 +214,10 @@ const Hero = () => {
               />
               <span
                 id="inl-wordmark"
-                style={{ transition: "transform 0.05s ease, opacity 0.05s ease, color 0.05s ease", transformOrigin: "left center" }}
+                style={{
+                  transition: "transform 0.05s ease, opacity 0.05s ease, color 0.05s ease",
+                  transformOrigin: "left center",
+                }}
                 className="text-lg font-bold tracking-tight text-foreground"
               >
                 I Never Left
@@ -222,16 +225,17 @@ const Hero = () => {
             </div>
 
             {/* Positioning line */}
-            <div className="space-y-6">
-  <div>
-    <span className="text-xs font-semibold text-primary uppercase tracking-widest">
-      The only UK service built solely for freelancer re-engagement
-    </span>
-  </div>
+            <p className="text-xs font-semibold text-primary uppercase tracking-widest">
+              The only UK service built solely for freelancer re-engagement
+            </p>
+
+            {/* Headline + body */}
+            <div className="space-y-4">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                Welcome to the Comeback Revolution. Because you never <em className="italic font-bold">really</em> left.
+                Welcome to the Comeback Revolution. Because you never{" "}
+                <em className="italic font-bold">really</em> left.
               </h1>
-              <p className="text-lg sm:text-xl font-semibold leading-relaxed max-w-2xl mt-6">
+              <p className="text-lg sm:text-xl font-semibold leading-relaxed max-w-2xl">
                 Helping freelancers, creatives, and parents coming back from maternity leave relaunch with ease, reconnect with their world, and get back to doing what they love — all in one place.
               </p>
               <p className="text-base sm:text-lg leading-relaxed max-w-2xl text-foreground/80">
@@ -239,7 +243,8 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
               <Button
                 size="lg"
                 className="text-base px-8 h-12 bg-foreground text-background hover:bg-foreground/90 font-medium"
@@ -317,10 +322,3 @@ const Hero = () => {
 };
 
 export default Hero;
-```
-
-One change — the positioning line now sits cleanly between the logo/wordmark and the main h1:
-```
-[INL logo]  I Never Left        ← animated logo + wordmark
-THE ONLY UK SERVICE BUILT SOLELY FOR FREELANCER RE-ENGAGEMENT   ← new line
-Welcome to the Comeback Revolution...   ← h1
