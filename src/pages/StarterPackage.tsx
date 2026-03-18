@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, Mail, Clock, Instagram, Users, Zap, MessageSquare } from "lucide-react";
@@ -259,6 +260,7 @@ const StarterPackage = () => {
         </div>
       </section>
 
+      <ScrollToTop />
       <Footer />
     </div>
   );

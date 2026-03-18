@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, Crown, CalendarCheck, Users, BarChart3, Sparkles, Zap, MessageSquare, UserCheck } from "lucide-react";
@@ -309,7 +310,7 @@ const ConciergePackage = () => {
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
-            ))}
+            ))}s
           </Accordion>
         </div>
       </section>
@@ -329,6 +330,7 @@ const ConciergePackage = () => {
         </div>
       </section>
 
+      <ScrollToTop />
       <Footer />
     </div>
   );

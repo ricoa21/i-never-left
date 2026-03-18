@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, Users, Mail, MessageSquare, Zap, Quote, BarChart3 } from "lucide-react";
@@ -303,6 +304,7 @@ const ProPackage = () => {
         </div>
       </section>
 
+      <ScrollToTop />
       <Footer />
     </div>
   );
