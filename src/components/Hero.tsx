@@ -239,7 +239,7 @@ const Hero = () => {
                 Helping freelancers, creatives, and parents coming back from maternity leave relaunch with ease, reconnect with their world, and get back to doing what they love — all in one place.
               </p>
               <p className="text-base sm:text-lg leading-relaxed max-w-2xl text-foreground/80">
-                Built for freelancers to enjoy being free.
+                Take the break. Keep the clients.
               </p>
             </div>
 
