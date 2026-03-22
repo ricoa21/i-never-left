@@ -5,7 +5,11 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+        {/* Top section — two equal columns */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+
+          {/* Left — INL CTA */}
           <div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
               Ready to Make Your
@@ -19,7 +23,7 @@ const Footer = () => {
               <Button
                 variant="hero"
                 size="lg"
-                className="text-lg px-8 py-4"
+                className="text-lg px:8 py-4"
                 onClick={() => window.location.href = "/return-journey"}
               >
                 Start Your Journey Today
@@ -27,6 +31,33 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Right — Company Content */}
+          <div>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Need Video, Photography
+              <span className="gradient-text block">or Animation?</span>
+            </h2>
+            <p className="text-xl text-background/80 mb-8 leading-relaxed">
+              Our friends at Company Content are a creative collaboration of photographers, videographers and animators. If your comeback needs content that really makes an impact, they can help.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                variant="hero"
+                size="lg"
+                className="text-lg px-8 py-4"
+                onClick={() => window.open("https://company-content.webflow.io", "_blank")}
+              >
+                Find Out More
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-background/20 mb-16" />
+
+        {/* Middle section — contact and social */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-semibold mb-4">Get In Touch</h3>
@@ -69,6 +100,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Bottom — logo and legal */}
         <div className="border-t border-background/20 mt-16 pt-8">
           <div className="flex flex-col items-center gap-3 text-center">
             <INLLogo variant="light" size={36} />
@@ -82,6 +114,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
       </div>
     </footer>
   );
