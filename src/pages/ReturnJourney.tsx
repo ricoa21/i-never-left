@@ -14,18 +14,13 @@ import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 
-const STRIPE_LINKS = {
-  starter: "https://buy.stripe.com/5kQaEQ6Cv3BUfty2I22wU00",
-  pro: "https://buy.stripe.com/bJefZaa5Lgo695abey2wU01",
-};
-
 const ReturnJourney = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
   const [submitted, setSubmitted] = useState(false);
-  const [selectedPackage, setSelectedPackage] = useState("");
   const [submittedName, setSubmittedName] = useState("");
+  const [submittedEmail, setSubmittedEmail] = useState("");
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -143,8 +138,8 @@ const ReturnJourney = () => {
       });
 
       if (response.ok) {
-        setSelectedPackage(formData.package);
         setSubmittedName(formData.fullName.split(" ")[0]);
+        setSubmittedEmail(formData.email);
         setSubmitted(true);
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
@@ -163,10 +158,6 @@ const ReturnJourney = () => {
 
   // --- CONFIRMATION SCREEN ---
   if (submitted) {
-    const isConcierge = selectedPackage === "concierge";
-    const packageLabel = selectedPackage === "starter" ? "Starter — £99" : selectedPackage === "pro" ? "Pro — £249" : "Concierge";
-    const stripeLink = selectedPackage === "starter" ? STRIPE_LINKS.starter : selectedPackage === "pro" ? STRIPE_LINKS.pro : null;
-
     return (
       <div className="min-h-screen bg-background flex items-center justify-center px-4 py-16">
         <div className="max-w-2xl w-full text-center space-y-10">
@@ -178,75 +169,55 @@ const ReturnJourney = () => {
               Your Comeback Begins.
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We have everything we need to start building your campaign, {submittedName}.
+              We have everything we need, {submittedName}.
+            </p>
+          </div>
+
+          {/* Main message */}
+          <div className="bg-card border border-border rounded-2xl p-8 text-left space-y-5">
+            <p className="text-foreground leading-relaxed">
+              Within 24 hours we will drop you a welcome email at{" "}
+              <span className="text-primary font-medium">{submittedEmail}</span>{" "}
+              with everything you need to complete your booking and get your campaign underway.
+            </p>
+            <p className="text-foreground leading-relaxed">
+              That email will include your secure payment link — once you are happy and payment is confirmed, your comeback is officially booked and we get to work.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              In the meantime, if you have any questions we are at{" "}
+              <a href="mailto:hello@ineverleft.co.uk" className="text-primary hover:underline">
+                hello@ineverleft.co.uk
+              </a>
             </p>
           </div>
 
           {/* What happens next */}
           <div className="bg-card border border-border rounded-2xl p-8 text-left space-y-5">
-            <p className="text-sm font-semibold text-primary uppercase tracking-widest">What happens next</p>
+            <p className="text-sm font-semibold text-primary uppercase tracking-widest">What happens after that</p>
             <div className="space-y-4">
               <div className="flex gap-4">
                 <span className="text-primary font-bold text-lg mt-0.5">01</span>
                 <div>
-                  <p className="font-semibold text-foreground">We will drop you a welcome email</p>
-                  <p className="text-muted-foreground text-sm mt-1">Within 24 hours we will be in touch at the address you gave us to confirm everything and introduce ourselves properly.</p>
+                  <p className="font-semibold text-foreground">We review your brief</p>
+                  <p className="text-muted-foreground text-sm mt-1">We go through your details, contact list and return date to make sure everything is in order before we start building.</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <span className="text-primary font-bold text-lg mt-0.5">02</span>
                 <div>
                   <p className="font-semibold text-foreground">We build your campaign</p>
-                  <p className="text-muted-foreground text-sm mt-1">Within 48 hours your messages will be written and back with you for approval. Every word, every send time — nothing goes out without your say-so.</p>
+                  <p className="text-muted-foreground text-sm mt-1">Every message written in your voice, timed perfectly around your return date. Back with you for approval within 48 hours of payment.</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <span className="text-primary font-bold text-lg mt-0.5">03</span>
                 <div>
                   <p className="font-semibold text-foreground">You approve, we launch</p>
-                  <p className="text-muted-foreground text-sm mt-1">Once you are happy, we schedule everything around your return date. Then you take your break — we handle the rest.</p>
+                  <p className="text-muted-foreground text-sm mt-1">Nothing goes out without your say-so. Once you are happy, we schedule everything. Then take your break — we handle the rest.</p>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Payment section */}
-          <div className="bg-card border border-border rounded-2xl p-8 space-y-5">
-            <p className="text-sm font-semibold text-primary uppercase tracking-widest">Complete your booking</p>
-            <p className="text-foreground">
-              You have chosen the <span className="font-semibold">{packageLabel}</span> package. To secure your campaign, complete payment below — it takes about 30 seconds.
-            </p>
-
-            {isConcierge ? (
-              <div className="space-y-3">
-                <p className="text-muted-foreground text-sm">
-                  Concierge is a bespoke service — we will confirm your exact quote and send a payment link directly to your inbox within 24 hours.
-                </p>
-                <p className="text-muted-foreground text-sm">
-                  In the meantime, if you have any questions just email us at{" "}
-                  <a href="mailto:hello@ineverleft.co.uk" className="text-primary hover:underline">
-                    hello@ineverleft.co.uk
-                  </a>
-                </p>
-              </div>
-            ) : (
-              <Button
-                size="lg"
-                className="w-full text-lg py-4 bg-primary text-white hover:bg-primary/90"
-                onClick={() => window.open(stripeLink!, "_blank")}
-              >
-                Complete Payment — {selectedPackage === "starter" ? "£99" : "£249"}
-              </Button>
-            )}
-          </div>
-
-          {/* Footer note */}
-          <p className="text-sm text-muted-foreground">
-            Questions? Email us any time at{" "}
-            <a href="mailto:hello@ineverleft.co.uk" className="text-primary hover:underline">
-              hello@ineverleft.co.uk
-            </a>
-          </p>
 
         </div>
       </div>
