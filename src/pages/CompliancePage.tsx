@@ -6,7 +6,7 @@ const sections = {
   gdpr: {
     id: "gdpr",
     title: "GDPR & Data Processing",
-    intro: "I Never Left is committed to full compliance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. This section explains how we handle personal data as both a data controller and, where applicable, a data processor.",
+    intro: "I Never Left Ltd is committed to full compliance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. This section explains how we handle personal data as both a data controller and, where applicable, a data processor.",
     subsections: [
       {
         heading: "Our role",
@@ -30,7 +30,7 @@ const sections = {
       },
       {
         heading: "ICO registration",
-        content: "I Never Left is registered with the Information Commissioner's Office (ICO) as required under UK data protection law. Our registration confirms we handle personal data lawfully and responsibly.",
+        content: "I Never Left Ltd is registered with the Information Commissioner's Office (ICO) as required under UK data protection law. Our ICO registration number is C1904412. Our registration confirms we handle personal data lawfully and responsibly.",
       },
     ],
   },
@@ -130,7 +130,6 @@ const CompliancePage = () => {
 
   useEffect(() => {
     document.title = "Compliance — I Never Left";
-    // Handle anchor scrolling on load
     const hash = window.location.hash;
     if (hash) {
       setTimeout(() => {
@@ -149,14 +148,14 @@ const CompliancePage = () => {
       <div className="bg-card border-b border-border sticky top-0 z-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div>
-            <span className="text-xs font-semibold text-primary uppercase tracking-widest">Legal & Compliance</span>
-            <p className="text-sm text-muted-foreground">I Never Left · Last updated March 2026</p>
+            <span className="text-xs font-semibold text-primary uppercase tracking-widest">Legal &amp; Compliance</span>
+            <p className="text-sm text-muted-foreground">I Never Left Ltd · Company No. 17143542 · Last updated April 2026</p>
           </div>
           <button
             onClick={() => navigate("/")}
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            ← Back to site
+            Back to site
           </button>
         </div>
       </div>
@@ -197,7 +196,7 @@ const CompliancePage = () => {
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold mb-4">Compliance</h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I Never Left is committed to operating transparently and responsibly. This page brings together our key compliance documents in one place — covering how we handle data, use cookies, process cancellations, and set expectations for use of our service.
+                I Never Left Ltd is committed to operating transparently and responsibly. This page brings together our key compliance documents in one place — covering how we handle data, use cookies, process cancellations, and set expectations for use of our service.
               </p>
               <div className="flex flex-wrap gap-3 mt-6">
                 {navItems.map((s) => (
@@ -236,11 +235,19 @@ const CompliancePage = () => {
 
             {/* Footer note */}
             <div className="border-t border-border pt-8 text-sm text-muted-foreground space-y-2">
-              <p>Registered in England & Wales. For questions, contact <a href="mailto:hello@ineverleft.co.uk" className="text-primary hover:underline">hello@ineverleft.co.uk</a></p>
-              <p>This page was last updated March 2026. We will notify you of any material changes by email.</p>
+              <p>I Never Left Ltd · Registered in England &amp; Wales · Company No. 17143542</p>
+              <p>Registered office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
+              <p>ICO Registration No. C1904412</p>
+              <p>
+                For questions, contact{" "}
+                <a href="mailto:hello@ineverleft.co.uk" className="text-primary hover:underline">
+                  hello@ineverleft.co.uk
+                </a>
+              </p>
+              <p>This page was last updated April 2026. We will notify you of any material changes by email.</p>
               <div className="flex gap-4 pt-2">
                 <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>
-                <a href="/terms" className="text-primary hover:underline">Terms & Conditions</a>
+                <a href="/terms" className="text-primary hover:underline">Terms &amp; Conditions</a>
               </div>
             </div>
 

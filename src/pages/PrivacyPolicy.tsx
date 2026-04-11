@@ -1,7 +1,7 @@
 const sections = [
   {
     title: "1. Who We Are",
-    intro: "I Never Left (\"we\", \"us\", \"our\") is a UK-based freelance re-engagement service. You can contact us at hello@ineverleft.co.uk.",
+    intro: "I Never Left (\"we\", \"us\", \"our\") is a UK-based freelance re-engagement service. We are registered in England & Wales as I Never Left Ltd, company number 17143542. Our registered office is 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ. You can contact us at hello@ineverleft.co.uk.",
     bullets: [],
   },
   {
@@ -119,7 +119,9 @@ const PrivacyPolicy = () => {
 
         {/* Footer note */}
         <div className="border-t border-border pt-8 text-sm text-muted-foreground">
-          <p>Registered in England & Wales. For questions, contact <a href="mailto:hello@ineverleft.co.uk" className="text-primary hover:underline">hello@ineverleft.co.uk</a></p>
+          <p>I Never Left Ltd &nbsp;·&nbsp; Registered in England & Wales &nbsp;·&nbsp; Company No. 17143542</p>
+          <p className="mt-1">Registered office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
+          <p className="mt-1">For questions, contact <a href="mailto:hello@ineverleft.co.uk" className="text-primary hover:underline">hello@ineverleft.co.uk</a></p>
         </div>
       </div>
     </div>

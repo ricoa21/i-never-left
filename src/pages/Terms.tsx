@@ -1,7 +1,7 @@
 const sections = [
   {
     title: "1. About These Terms",
-    intro: "These Terms & Conditions govern your use of the I Never Left service and website at ineverleft.co.uk. By purchasing a package or using our service, you agree to these terms. Please read them carefully. These terms are governed by the laws of England & Wales.",
+    intro: "These Terms & Conditions govern your use of the I Never Left service and website at ineverleft.co.uk. By purchasing a package or using our service, you agree to these terms. Please read them carefully. These terms are governed by the laws of England & Wales. I Never Left Ltd is registered in England & Wales, company number 17143542. Our registered office is 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ.",
     bullets: [],
   },
   {
@@ -50,12 +50,12 @@ const sections = [
   },
   {
     title: "8. Intellectual Property",
-    intro: "All campaign content created by I Never Left on your behalf remains your property once delivered. Our website content, branding, and materials remain the intellectual property of I Never Left and may not be reproduced without written permission.",
+    intro: "All campaign content created by I Never Left on your behalf remains your property once delivered. Our website content, branding, and materials remain the intellectual property of I Never Left Ltd and may not be reproduced without written permission.",
     bullets: [],
   },
   {
     title: "9. Limitation of Liability",
-    intro: "I Never Left will not be liable for any indirect, incidental or consequential loss arising from your use of our service, including but not limited to loss of revenue, clients or business opportunity. Our total liability in any circumstance is limited to the amount you paid for your package. Nothing in these terms limits our liability for fraud, death or personal injury caused by our negligence.",
+    intro: "I Never Left Ltd will not be liable for any indirect, incidental or consequential loss arising from your use of our service, including but not limited to loss of revenue, clients or business opportunity. Our total liability in any circumstance is limited to the amount you paid for your package. Nothing in these terms limits our liability for fraud, death or personal injury caused by our negligence.",
     bullets: [],
   },
   {
@@ -109,7 +109,9 @@ const Terms = () => {
 
         {/* Footer note */}
         <div className="border-t border-border pt-8 text-sm text-muted-foreground">
-          <p>Registered in England & Wales. For questions, contact <a href="mailto:hello@ineverleft.co.uk" className="text-primary hover:underline">hello@ineverleft.co.uk</a></p>
+          <p>I Never Left Ltd &nbsp;·&nbsp; Registered in England & Wales &nbsp;·&nbsp; Company No. 17143542</p>
+          <p className="mt-1">Registered office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
+          <p className="mt-1">For questions, contact <a href="mailto:hello@ineverleft.co.uk" className="text-primary hover:underline">hello@ineverleft.co.uk</a></p>
         </div>
       </div>
     </div>
