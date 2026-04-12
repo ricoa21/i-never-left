@@ -1,7 +1,7 @@
 import ScrollToTop from "@/components/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Users, Mail, MessageSquare, Zap, Quote, BarChart3 } from "lucide-react";
+import { ArrowLeft, Users, Mail, MessageSquare, Zap, Quote, CalendarCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Footer from "@/components/Footer";
@@ -30,11 +30,11 @@ const ProPackage = () => {
     },
     {
       question: "How do the monthly keep-warm posts work?",
-      answer: "Once you sign up we create all your keep-warm posts in one go — you approve them once and we auto-schedule them monthly via Buffer. One post per month, up to 12 months maximum. You connect your Instagram to Buffer once, we load everything in, and it fires automatically. You can see every scheduled post and revoke access anytime."
+      answer: "Once you sign up we create all your keep-warm posts in one go — you approve them once and we schedule them monthly. One post per month, up to 12 months maximum. We can post directly to your Instagram or post from our account and tag you so you can reshare with one tap — whichever you prefer."
     },
     {
       question: "How are the return week posts handled?",
-      answer: "On your return week we publish 4 posts across 7 days — an announcement on day 1, behind the scenes on day 3, a booking reminder on day 5, and a wrap-up on day 7. All created by us, scheduled via Buffer, designed to keep you visible all week not just for one day."
+      answer: "On your return week we publish 4 posts across 7 days — an announcement on day 1, behind the scenes on day 3, a booking reminder on day 5, and a wrap-up on day 7. All created by us, posted directly to your Instagram or via our account for you to reshare. Designed to keep you visible all week, not just for one day."
     },
     {
       question: "How are the messages sent?",
@@ -50,11 +50,11 @@ const ProPackage = () => {
     },
     {
       question: "What if my return date changes?",
-      answer: "No problem. We'll reschedule your entire campaign and keep-warm schedule around your new date. Your Buffer queue updates too."
+      answer: "No problem. We'll reschedule your entire campaign and keep-warm schedule around your new date. Everything updates around you."
     },
     {
-      question: "What does the post-return support include?",
-      answer: "For 30 days after your return we track engagement across your campaign — who opened, clicked, and replied. At the two week mark we send one SMS nudge to anyone who hasn't responded yet. After that the campaign is complete and you're back in business. Need more ongoing support? That's what Concierge is for."
+      question: "What does the two-week check-in include?",
+      answer: "Two weeks after your return we send a final nudge to any clients who haven't responded yet — then let you know how your campaign landed. After that the campaign is complete and you're back in business. Need more ongoing support? That's what Concierge is for."
     },
     {
       question: "What happens if some messages bounce or don't deliver?",
@@ -62,7 +62,7 @@ const ProPackage = () => {
     },
     {
       question: "Is Pro a one-off payment?",
-      answer: "The £249 covers your full campaign, all keep-warm posts, your return week content, and 30 days of post-return support. No hidden fees."
+      answer: "Yes — the £249 covers your full campaign, all keep-warm posts, your return week content, and your two-week check-in. No hidden fees, no monthly subscription."
     },
   ];
 
@@ -128,18 +128,18 @@ const ProPackage = () => {
               },
               {
                 icon: Mail,
-                title: "Keep Warm Monthly Posts",
-                description: "One post per month during your entire break (up to 12 months). Pre-approved by you, auto-scheduled via Buffer. Your audience never forgets you exist.",
-              },
-              {
-                icon: BarChart3,
-                title: "Return week content",
-                description: "4 posts published across your return week — announcement, behind the scenes, booking reminder, wrap-up. Maximum visibility when it matters most.",
+                title: "Monthly keep-warm posts",
+                description: "One post per month during your entire break (up to 12 months). Pre-approved by you, scheduled and ready to go. Your audience never forgets you exist.",
               },
               {
                 icon: MessageSquare,
-                title: "Engagement tracking",
-                description: "See who's opening, clicking, and responding — plus a 30 day post-return check-in so you know exactly how your comeback landed.",
+                title: "Return week content",
+                description: "4 posts published across your return week — announcement, behind the scenes, booking reminder, wrap-up. Posted to your Instagram or via our account for you to reshare.",
+              },
+              {
+                icon: CalendarCheck,
+                title: "Two-week check-in",
+                description: "Two weeks after your return we send a final nudge to anyone who hasn't responded yet — then let you know how your comeback landed.",
               },
             ].map((item) => (
               <Card key={item.title} className="p-8 border-border">
@@ -171,7 +171,7 @@ const ProPackage = () => {
             <Card className="p-8 border-border">
               <Zap className="w-8 h-8 text-primary mb-5" />
               <p className="text-lg text-card-foreground leading-relaxed">
-                You want deeper reach, more channels, and the data to know it's working.
+                You want deeper reach, more channels, and the peace of mind that nothing slips through while you're away.
               </p>
             </Card>
           </div>
@@ -191,11 +191,11 @@ const ProPackage = () => {
             </div>
             <div className="p-8 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-2">Day 1</div>
-              <p className="text-muted-foreground">Your keep-warm posts are created, you approve them once via Buffer. Scheduled and ready to go.</p>
+              <p className="text-muted-foreground">Your keep-warm posts are created and you approve them once. Scheduled and ready to go for the months ahead.</p>
             </div>
             <div className="p-8 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-2">Every month you're away</div>
-              <p className="text-muted-foreground">One post goes out automatically. Countdown themes, back-soon messaging, early booking teasers. Your audience never forgets you exist.</p>
+              <p className="text-muted-foreground">One post goes out automatically. Lifestyle content early on, shifting to "nearly back" energy as your return approaches. Your audience never forgets you exist.</p>
             </div>
             <div className="p-8 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-2">4 weeks before return</div>
@@ -203,7 +203,7 @@ const ProPackage = () => {
             </div>
             <div className="p-8 bg-card rounded-xl border border-border">
               <div className="text-primary font-bold mb-2">Return week</div>
-              <p className="text-muted-foreground">Message 3 fires by email and SMS. 4 posts published across your return week — announcement, behind the scenes, booking reminder, wrap-up. Bookings open.</p>
+              <p className="text-muted-foreground">Message 3 fires by email and SMS. 4 posts across the week — announcement, behind the scenes, booking reminder, wrap-up. Posted to your Instagram or via our account to reshare.</p>
             </div>
             <div className="p-8 bg-card rounded-xl border border-primary/50 bg-primary/5">
               <div className="text-primary font-bold mb-2">Example ✦</div>
@@ -214,12 +214,12 @@ const ProPackage = () => {
         </div>
       </section>
 
-      {/* 30 days after */}
+      {/* Two-week check-in */}
       <section className="py-12 bg-muted/20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="p-8 bg-card rounded-xl border border-border">
-            <div className="text-primary font-bold mb-2">30 days after your return</div>
-            <p className="text-muted-foreground">We track engagement across your campaign — who opened, clicked, and replied. At the two week mark we send one SMS nudge to anyone who hasn't responded yet. Then you're done — and back in business.</p>
+            <div className="text-primary font-bold mb-2">Two weeks after your return</div>
+            <p className="text-muted-foreground">We send a final nudge to any clients who haven't responded yet — then let you know how your campaign landed. After that you're done, and back in business.</p>
           </div>
         </div>
       </section>
