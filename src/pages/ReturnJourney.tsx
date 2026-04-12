@@ -32,6 +32,8 @@ const ReturnJourney = () => {
     package: "",
     channels: [] as string[],
     bookingUrl: "",
+    monthlyPostTone: "",
+    monthlyPostMethod: "",
     dataConsent: false,
     termsConsent: false,
     marketingConsent: false,
@@ -39,6 +41,8 @@ const ReturnJourney = () => {
 
   const [contactListFile, setContactListFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const isPro = formData.package === "pro";
 
   const packages = [
     {
@@ -59,8 +63,8 @@ const ReturnJourney = () => {
       features: [
         "Everything in Starter",
         "Outreach to 200 contacts",
-        "1 keep-warm post per month while you are away (up to 12 months)",
-        "Return week — 4 posts across 7 days via Buffer",
+        "One post per month during your entire break (up to 12 months)",
+        "Return week — 4 posts across 7 days",
         "30 days engagement tracking after return",
       ],
     },
@@ -129,6 +133,10 @@ const ReturnJourney = () => {
       data.append("channels", formData.channels.join(", "));
       data.append("bookingUrl", formData.bookingUrl);
       data.append("marketingConsent", formData.marketingConsent ? "Yes" : "No");
+      if (isPro) {
+        data.append("monthlyPostTone", formData.monthlyPostTone);
+        data.append("monthlyPostMethod", formData.monthlyPostMethod);
+      }
       if (contactListFile) data.append("contactList", contactListFile);
 
       const response = await fetch("https://www.formbackend.com/f/edbe0a7137144be5", {
@@ -162,7 +170,6 @@ const ReturnJourney = () => {
       <div className="min-h-screen bg-background flex items-center justify-center px-4 py-16">
         <div className="max-w-2xl w-full text-center space-y-10">
 
-          {/* Heading */}
           <div className="space-y-4">
             <div className="inline-block text-4xl mb-2">✦</div>
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground">
@@ -173,7 +180,6 @@ const ReturnJourney = () => {
             </p>
           </div>
 
-          {/* Main message */}
           <div className="bg-card border border-border rounded-2xl p-8 text-left space-y-5">
             <p className="text-foreground leading-relaxed">
               Within 24 hours we will drop you a welcome email at{" "}
@@ -191,7 +197,6 @@ const ReturnJourney = () => {
             </p>
           </div>
 
-          {/* What happens next */}
           <div className="bg-card border border-border rounded-2xl p-8 text-left space-y-5">
             <p className="text-sm font-semibold text-primary uppercase tracking-widest">What happens after that</p>
             <div className="space-y-4">
@@ -401,7 +406,7 @@ const ReturnJourney = () => {
             <CardContent>
               <RadioGroup
                 value={formData.package}
-                onValueChange={(value) => setFormData((prev) => ({ ...prev, package: value }))}
+                onValueChange={(value) => setFormData((prev) => ({ ...prev, package: value, monthlyPostTone: "", monthlyPostMethod: "" }))}
                 className="space-y-4"
               >
                 {packages.map((pkg) => (
@@ -426,6 +431,90 @@ const ReturnJourney = () => {
               </RadioGroup>
             </CardContent>
           </Card>
+
+          {/* Pro-only: Monthly post questions */}
+          {isPro && (
+            <Card className="border-primary/40">
+              <CardHeader>
+                <CardTitle>4a. Your Monthly Posts</CardTitle>
+                <CardDescription>
+                  Tell us how you'd like your monthly keep-warm posts to feel — we'll tailor the content to match and naturally shift the tone as your return gets closer.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-8">
+
+                {/* Post tone */}
+                <div>
+                  <Label className="text-base font-semibold">How would you like your monthly posts to feel? *</Label>
+                  <p className="text-sm text-muted-foreground mt-1 mb-4">Whatever you choose, we'll naturally shift to a "nearly back, get booked in" tone in your final 1–2 months.</p>
+                  <RadioGroup
+                    value={formData.monthlyPostTone}
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, monthlyPostTone: value }))}
+                    className="space-y-3"
+                  >
+                    <div className="border rounded-lg p-4 hover:border-primary transition-colors">
+                      <div className="flex items-start space-x-3">
+                        <RadioGroupItem value="lifestyle" id="tone-lifestyle" className="mt-1" />
+                        <div>
+                          <Label htmlFor="tone-lifestyle" className="font-semibold cursor-pointer">Holiday / lifestyle</Label>
+                          <p className="text-sm text-muted-foreground mt-1">Keep it personal throughout — share the adventure, the journey, the experience.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:border-primary transition-colors">
+                      <div className="flex items-start space-x-3">
+                        <RadioGroupItem value="career" id="tone-career" className="mt-1" />
+                        <div>
+                          <Label htmlFor="tone-career" className="font-semibold cursor-pointer">Career focused</Label>
+                          <p className="text-sm text-muted-foreground mt-1">Industry insights, behind the scenes, professional updates — keep your audience engaged with your work.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:border-primary transition-colors">
+                      <div className="flex items-start space-x-3">
+                        <RadioGroupItem value="mix" id="tone-mix" className="mt-1" />
+                        <div>
+                          <Label htmlFor="tone-mix" className="font-semibold cursor-pointer">Mix — lifestyle first, career focused as I get closer to returning</Label>
+                          <p className="text-sm text-muted-foreground mt-1">Starts with the holiday vibes, naturally builds momentum and shifts to "nearly back" energy as your return approaches.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </RadioGroup>
+                </div>
+
+                {/* Post method */}
+                <div>
+                  <Label className="text-base font-semibold">How would you like your monthly posts to be handled? *</Label>
+                  <p className="text-sm text-muted-foreground mt-1 mb-4">We create every post — you just choose how they reach your audience.</p>
+                  <RadioGroup
+                    value={formData.monthlyPostMethod}
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, monthlyPostMethod: value }))}
+                    className="space-y-3"
+                  >
+                    <div className="border rounded-lg p-4 hover:border-primary transition-colors">
+                      <div className="flex items-start space-x-3">
+                        <RadioGroupItem value="own-account" id="method-own" className="mt-1" />
+                        <div>
+                          <Label htmlFor="method-own" className="font-semibold cursor-pointer">Post to my own Instagram</Label>
+                          <p className="text-sm text-muted-foreground mt-1">We schedule posts directly to your profile via Buffer. Looks completely native to your account. Requires a one-time Buffer connection — we'll walk you through it, takes about 5 minutes.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:border-primary transition-colors">
+                      <div className="flex items-start space-x-3">
+                        <RadioGroupItem value="reshare" id="method-reshare" className="mt-1" />
+                        <div>
+                          <Label htmlFor="method-reshare" className="font-semibold cursor-pointer">Post from I Never Left — I'll reshare</Label>
+                          <p className="text-sm text-muted-foreground mt-1">We post from our account and tag you. You reshare to your story or feed with one tap. No account connection needed — the simplest option.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </RadioGroup>
+                </div>
+
+              </CardContent>
+            </Card>
+          )}
 
           <Card>
             <CardHeader>
