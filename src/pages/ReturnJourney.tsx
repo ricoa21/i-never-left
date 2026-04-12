@@ -57,6 +57,7 @@ const ReturnJourney = () => {
         "2 Instagram posts created for you to publish",
         "One-off price — no ongoing fees",
       ],
+      note: "Covers up to 100 contacts. Got more? Pro gives you up to 200.",
     },
     {
       id: "pro",
@@ -69,6 +70,7 @@ const ReturnJourney = () => {
         "Return week — 4 posts across 7 days",
         "30 days engagement tracking after return",
       ],
+      note: null,
     },
     {
       id: "concierge",
@@ -81,6 +83,7 @@ const ReturnJourney = () => {
         "3 months post-return support included",
         "Continue from £99 per month after that",
       ],
+      note: null,
     },
   ];
 
@@ -267,20 +270,20 @@ const ReturnJourney = () => {
 
           <Card>
             <CardHeader>
-              <CardTitle>1. Upload Your Client Contact List</CardTitle>
+              <CardTitle>1. Your Client List</CardTitle>
               <CardDescription>
-                Download our template, fill in your client details, and upload it here. We handle your data securely and delete all files after your campaign completes.
+                We need your client contacts to build your campaign. Upload a spreadsheet or CSV if you have one — or just take a screenshot of your contacts, WhatsApp group, or notes app. Not sure? A screenshot is absolutely fine — we'll take it from there.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <Label htmlFor="contact-list">Contact List File</Label>
+                <Label htmlFor="contact-list">Upload your client list or screenshot</Label>
                 <div className="mt-2 flex items-center gap-4">
                   <div className="flex-1">
                     <Input
                       id="contact-list"
                       type="file"
-                      accept=".csv,.xlsx,.xls"
+                      accept=".csv,.xlsx,.xls,image/*"
                       onChange={handleContactListUpload}
                       className="cursor-pointer"
                     />
@@ -293,6 +296,9 @@ const ReturnJourney = () => {
                 {contactListFile && (
                   <p className="text-sm text-muted-foreground mt-2">Selected: {contactListFile.name}</p>
                 )}
+                <p className="text-sm text-muted-foreground mt-3">
+                  Accepts spreadsheets, CSV files, or screenshots from your phone. You can always send more contacts by email after you sign up.
+                </p>
               </div>
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm font-medium text-foreground mb-2">GDPR Compliance</p>
@@ -371,6 +377,7 @@ const ReturnJourney = () => {
                     <SelectItem value="coaching">Coaching and Training</SelectItem>
                     <SelectItem value="health">Health and Wellness</SelectItem>
                     <SelectItem value="trades">Trades and Services</SelectItem>
+                    <SelectItem value="pets">Pets and Animal Care</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
@@ -380,11 +387,11 @@ const ReturnJourney = () => {
 
           <Card>
             <CardHeader>
-              <CardTitle>3. Return Date</CardTitle>
+              <CardTitle>3. Your Return Date</CardTitle>
               <CardDescription>When are you back and ready for your campaign to launch?</CardDescription>
             </CardHeader>
             <CardContent>
-              <Label>Campaign Launch Date *</Label>
+              <Label>Return Date *</Label>
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
@@ -438,6 +445,11 @@ const ReturnJourney = () => {
                             </li>
                           ))}
                         </ul>
+                        {pkg.note && (
+                          <p className="text-sm text-amber-500 mt-3 font-medium">
+                            {pkg.note}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -542,7 +554,7 @@ const ReturnJourney = () => {
                   <div>
                     <Label className="text-base font-semibold">Upload photos for your posts</Label>
                     <p className="text-sm text-muted-foreground mt-1 mb-3">
-                      Upload 3–5 photos we can use — travel shots, work photos, anything that represents you. The more personal the better. You can always send more by email after you sign up.
+                      Upload any photos of your current situation — cocktails on Phi Phi beach, a selfie at La Sagrada Família, or trying to put a 3 month old to sleep! The more real the better. You can always send more by email after you sign up.
                     </p>
                     <Input
                       type="file"
@@ -566,7 +578,7 @@ const ReturnJourney = () => {
           <Card>
             <CardHeader>
               <CardTitle>5. Communication Channels</CardTitle>
-              <CardDescription>Which channels would you like us to use for your return campaign?</CardDescription>
+              <CardDescription>Which channels would you like us to use to contact your clients directly?</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex gap-8 mt-2">
