@@ -34,12 +34,14 @@ const ReturnJourney = () => {
     bookingUrl: "",
     monthlyPostTone: "",
     monthlyPostMethod: "",
+    instagramStyle: "",
     dataConsent: false,
     termsConsent: false,
     marketingConsent: false,
   });
 
   const [contactListFile, setContactListFile] = useState<File | null>(null);
+  const [instagramPhotos, setInstagramPhotos] = useState<FileList | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const isPro = formData.package === "pro";
@@ -102,6 +104,12 @@ const ReturnJourney = () => {
     if (file) setContactListFile(file);
   };
 
+  const handleInstagramPhotosUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setInstagramPhotos(e.target.files);
+    }
+  };
+
   const downloadTemplate = () => {
     const csvContent =
       "Name,Channel Preference,Phone,Email,Notes\n" +
@@ -136,6 +144,12 @@ const ReturnJourney = () => {
       if (isPro) {
         data.append("monthlyPostTone", formData.monthlyPostTone);
         data.append("monthlyPostMethod", formData.monthlyPostMethod);
+        data.append("instagramStyle", formData.instagramStyle);
+        if (instagramPhotos) {
+          Array.from(instagramPhotos).forEach((file, i) => {
+            data.append(`instagramPhoto${i + 1}`, file);
+          });
+        }
       }
       if (contactListFile) data.append("contactList", contactListFile);
 
@@ -406,7 +420,7 @@ const ReturnJourney = () => {
             <CardContent>
               <RadioGroup
                 value={formData.package}
-                onValueChange={(value) => setFormData((prev) => ({ ...prev, package: value, monthlyPostTone: "", monthlyPostMethod: "" }))}
+                onValueChange={(value) => setFormData((prev) => ({ ...prev, package: value, monthlyPostTone: "", monthlyPostMethod: "", instagramStyle: "" }))}
                 className="space-y-4"
               >
                 {packages.map((pkg) => (
@@ -510,6 +524,39 @@ const ReturnJourney = () => {
                       </div>
                     </div>
                   </RadioGroup>
+                </div>
+
+                {/* Instagram style + photo upload */}
+                <div className="space-y-4">
+                  <div>
+                    <Label className="text-base font-semibold">Your Instagram style</Label>
+                    <p className="text-sm text-muted-foreground mt-1 mb-3">
+                      Tell us a little about how your Instagram looks and feels — so we can create posts that fit naturally. For example: "relaxed and personal, lots of travel shots" or "clean and professional, mostly work in progress photos."
+                    </p>
+                    <Input
+                      value={formData.instagramStyle}
+                      onChange={(e) => setFormData((prev) => ({ ...prev, instagramStyle: e.target.value }))}
+                      placeholder="Describe your Instagram style..."
+                    />
+                  </div>
+                  <div>
+                    <Label className="text-base font-semibold">Upload photos for your posts</Label>
+                    <p className="text-sm text-muted-foreground mt-1 mb-3">
+                      Upload 3–5 photos we can use — travel shots, work photos, anything that represents you. The more personal the better. You can always send more by email after you sign up.
+                    </p>
+                    <Input
+                      type="file"
+                      accept="image/*"
+                      multiple
+                      onChange={handleInstagramPhotosUpload}
+                      className="cursor-pointer"
+                    />
+                    {instagramPhotos && instagramPhotos.length > 0 && (
+                      <p className="text-sm text-muted-foreground mt-2">
+                        {instagramPhotos.length} photo{instagramPhotos.length > 1 ? "s" : ""} selected
+                      </p>
+                    )}
+                  </div>
                 </div>
 
               </CardContent>
