@@ -24,8 +24,8 @@ const packages = [
       "Everything in Starter",
       "Outreach to 200 contacts",
       "1 keep-warm post per month while you are away (up to 12 months)",
-      "Return week — 4 posts across 7 days via Buffer",
-      "30 days engagement tracking after return",
+      "Return week — 4 posts across 7 days",
+      "Two-week check-in after return",
     ],
   },
   {
