@@ -14,6 +14,12 @@ import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+  }
+}
+
 const ReturnJourney = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -68,7 +74,7 @@ const ReturnJourney = () => {
         "Outreach to 200 contacts",
         "One post per month during your entire break (up to 12 months)",
         "Return week — 4 posts across 7 days",
-        "30 days engagement tracking after return",
+        "Two-week check-in and final nudge after return",
       ],
       note: null,
     },
@@ -167,6 +173,13 @@ const ReturnJourney = () => {
         setSubmittedEmail(formData.email);
         setSubmitted(true);
         window.scrollTo({ top: 0, behavior: "smooth" });
+        // GA4 conversion event — fires when form submits successfully
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "campaign_enquiry", {
+            event_category: "conversion",
+            event_label: formData.package,
+          });
+        }
       } else {
         throw new Error("Submission failed");
       }
@@ -522,7 +535,7 @@ const ReturnJourney = () => {
                         <RadioGroupItem value="own-account" id="method-own" className="mt-1" />
                         <div>
                           <Label htmlFor="method-own" className="font-semibold cursor-pointer">Post to my own Instagram</Label>
-                          <p className="text-sm text-muted-foreground mt-1">We schedule posts directly to your profile via Buffer. Looks completely native to your account. Requires a one-time Buffer connection — we'll walk you through it, takes about 5 minutes.</p>
+                          <p className="text-sm text-muted-foreground mt-1">We schedule posts directly to your profile. Looks completely native to your account. We'll walk you through the one-time connection — takes about 5 minutes.</p>
                         </div>
                       </div>
                     </div>
